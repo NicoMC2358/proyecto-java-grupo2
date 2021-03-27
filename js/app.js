@@ -35,14 +35,7 @@ function validarNumeros(input) {
     return false;
   }
 
-  /*esto NO es un numero isNaN(---)
-    isNaN('hola') el resultado es true
-    isNaN(12334) el resultado es false
 
-    ! operador Not (negacion)
-    !true -> false
-    !false -> true
-    */
 }
 
 function validarCantidadCaracteres(input){
@@ -75,40 +68,32 @@ function validarCheck(){
 }
 
 function validarGeneral(event){
-    event.preventDefault();
+    event.preventDefault(); //Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento, es decir, puede ser llamado de nuevo. basicamente no me permite actualizar la pantalla 
     console.log('dentro de la funcion validar general' + event);
-    let alerta = document.getElementById('msjEnvio');
+   
+    let div= document.createElement("div");
+    div.innerHTML="";
 
     if(campoRequerido(document.getElementById('nombre')) &&
     validarMail(document.getElementById('email')) &&
     validarNumeros(document.getElementById('telefono')) &&
     validarCantidadCaracteres(document.getElementById('consulta')) &&
     validarCheck()){
-      enviarMail();
-      // alerta.className = 'alert alert-success mx-3';
-      // alerta.innerHTML = 'Su consulta fue enviada correctamente'; 
+     
+      div.innerHTML=`<div class="alert alert-success" role="alert" id="msjEnvio">
+     Los datos se enviaron correctamente
+    </div>`;
     }else{
-      alerta.className = 'alert alert-danger mx-3';
-      alerta.innerHTML = 'Ocurrio un error, verifique los datos ingresados.'; 
+
+      div.innerHTML=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    `;
     }
+    formulario.appendChild(div);
+
 }
 
-function enviarMail(){
-  // envioelmail.then(funcion si todo salio bien, funcion cuando algo salio)
-  emailjs.send("service_skyw81f","template_NQ91Q5cI",{
-    to_name: "Administrador",
-    from_name: document.getElementById('email').value,
-    message_html: `Nombre y Apellido: ${document.getElementById('nombre').value} -
-    Telefono: ${document.getElementById('telefono').value} -
-    Consulta: ${document.getElementById('consulta').value}`,
-    }).then(
-      function (response){
-        console.log(response);
-        // agregar el alerta que todo salio bien
-        alert('los datos se enviaron');
-      }, function (error){
-        console.log(error);
-        alert('fallo el envio');
-      }
-    )
-}
