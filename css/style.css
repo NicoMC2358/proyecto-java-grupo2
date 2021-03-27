@@ -2,3 +2,25 @@
     width: 45px;
     height: 35px;
 }
+
+.card-img-miguel {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-img-top-miguel {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.boton-miguel {
+    width: 200px;
+    margin-bottom: 25px;
+}
+
+.contenedorBotonMiguel{
+    display: flex;
+    justify-content: center;
+}
