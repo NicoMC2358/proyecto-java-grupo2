@@ -54,7 +54,7 @@ let checkbox = document.getElementById('checkTermino');
 //     //esto es una funcion anonima, funciona solo aqui no la puedo llamar desde otro lugar
 // })
 
-//checkbox.addEventListener('change', validarCheck);
+checkbox.addEventListener('change', validarCheck);
 
 function validarCheck(){
     console.log(checkbox.checked)
@@ -70,30 +70,22 @@ function validarCheck(){
 function validarGeneral(event){
     event.preventDefault(); //Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento, es decir, puede ser llamado de nuevo. basicamente no me permite actualizar la pantalla 
     console.log('dentro de la funcion validar general' + event);
-   
-    let div= document.createElement("div");
-    div.innerHTML="";
 
+
+    let alerta=document.getElementById("msjEnvio");
     if(campoRequerido(document.getElementById('nombre')) &&
     validarMail(document.getElementById('email')) &&
     validarNumeros(document.getElementById('telefono')) &&
     validarCantidadCaracteres(document.getElementById('consulta')) &&
     validarCheck()){
-     
-      div.innerHTML=`<div class="alert alert-success" role="alert" id="msjEnvio">
-     Los datos se enviaron correctamente
-    </div>`;
+      alerta.className="alert alert-success my-3"
+      alerta.innerHTML= "Los datos se enviaron correctamente"
+   
     }else{
-
-      div.innerHTML=`<div class="alert alert-warning alert-dismissible fade show" role="alert">
-      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    `;
+      alerta.className="alert alert-warning alert-dismissible fade show my-3"
+      alerta.innerHTML= "Ocurrio un error, verifique los datos ingresados"
+    
     }
-    formulario.appendChild(div);
 
 }
 
