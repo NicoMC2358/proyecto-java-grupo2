@@ -30,7 +30,7 @@ function agregarProducto() {
     let veces = parseInt(prompt("¿Cuantos productos va a ingresar?"));
 
     if (isNaN(veces) || veces <= 0) {
-        console.error("Debe ingresar un número mayor que cero");
+        console.error("Debe ingresar un número y que este sea mayor que cero");
         return;
     }
 
@@ -38,25 +38,25 @@ function agregarProducto() {
         let codigo = i + 1;
         let nombre = prompt(`Ingrese el nombre del producto #${i + 1}`);
 
-        if (nombre === "" || nombre === null || nombre === String) {
-            console.error("Faltaron datos o se canceló");
+        if (nombre === "" || nombre === null || !isNaN(nombre)) {
+            console.error("No se ingreso el dato o se puso un número en el nombre");
             return;
         } else {
             let precio = parseFloat(prompt("Ingrese el precio del producto"));
 
-            if (isNaN(veces) || veces <= 0) {
+            if (isNaN(precio) || precio <= 0) {
                 console.error("No se ingresó un número o se canceló");
                 return;
             } else {
                 let stock = parseFloat(prompt("Ingrese el stock del producto"));
 
-                if (isNaN(veces) || veces <= 0) {
+                if (isNaN(stock) || stock <= 0) {
                     console.error("No se ingresó un número o se canceló");
                     return;
                 } else {
                     let imagen = (prompt("Ingrese el link de la imagen del producto"));
 
-                    if (imagen === "" || nombre === null) {
+                    if (imagen === "" || imagen === null) {
                         console.error("No se ingresó el dato o se canceló");
                         return;
                     }
@@ -70,14 +70,6 @@ function agregarProducto() {
     }
     localStorage.setItem('productos', JSON.stringify(productos))
     cargarCard()
-}
-
-function cantidadCarrito() {
-    let sumaCantidad = 0;
-    for (let i = 0; i < carrito.length; i++) {
-        sumaCantidad += carrito[i].cantidad;
-    }
-    contadorCarrito.innerHTML = sumaCantidad;
 }
 
 function cargarCard() {
