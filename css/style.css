@@ -2,3 +2,17 @@
     width: 45px;
     height: 35px;
 }
+
+
+/* Estilos main */
+
+footer #footer-main{
+    background-color: black;
+}
+
+ul #list-info-main{
+list-style-type:none;
+}
+
+
+/* Fin estilos main */
