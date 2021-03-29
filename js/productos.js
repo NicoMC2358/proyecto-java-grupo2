@@ -8,25 +8,25 @@ class Producto {
     }
 }
 
-// Crear el arreglo para los productos
-let productos = JSON.parse(localStorage.getItem(`productos`)) || [];
+//Crear arreglo de productos
+let productos = JSON.parse(localStorage.getItem("productos")) || [];
 
-// // Crear el arreglo para el carrito
-// let carrito = JSON.parse(localStorage.getItem(`carrito`)) || [];
+//Crear arreglo para el carrito
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-// // Variable que suma los precios del carrito
-// let sumaCarrito = 0;
+//Variable que suma los precios del carrito
+let sumaCarrito = 0;
 
-// // Contenedor del badge de carrito
-// let contadorCarrito = document.querySelector("#contadorCarrito");
+// //Contador del badge de carrito
+// let contadorCarrito = document.querySelector("#countCarrito");
 
-// // Contenedor card-deck
-// let contenedor = document.querySelector("#cardsContenedor");
+//Contenedor card-deck
+let contenedor = document.querySelector("#cardsContenedor");
 
-// //Body del Modal
+// //Body del modal
 // let cuerpoModal = document.querySelector(".modal-body");
 
-function addProducto() {
+function agregarProducto() {
     let veces = parseInt(prompt("¿Cuantos productos va a ingresar?"));
 
     if (isNaN(veces) || veces <= 0) {
@@ -38,7 +38,7 @@ function addProducto() {
         let codigo = i + 1;
         let nombre = prompt(`Ingrese el nombre del producto #${i + 1}`);
 
-        if (nombre === "" || nombre === null) {
+        if (nombre === "" || nombre === null || nombre === String) {
             console.error("Faltaron datos o se canceló");
             return;
         } else {
@@ -67,5 +67,37 @@ function addProducto() {
                 }
             }
         }
+    }
+    localStorage.setItem('productos', JSON.stringify(productos))
+    cargarCard()
+}
+
+function cantidadCarrito() {
+    let sumaCantidad = 0;
+    for (let i = 0; i < carrito.length; i++) {
+        sumaCantidad += carrito[i].cantidad;
+    }
+    contadorCarrito.innerHTML = sumaCantidad;
+}
+
+function cargarCard() {
+    contenedor.innerHTML = "";
+    for (let i = 0; i < productos.length; i++) {
+        let div = document.createElement("div");
+        div.classList = "col col-md-6 col-lg";
+        div.innerHTML = `
+        <div class="card border-secondary mb-3">
+            <img src="${productos[i].imagen}" class="card-img-top-miguel imgCard" alt="${productos[i].nombre}" />
+            <div class="card-body">
+                <h5 class="card-title">${productos[i].nombre}</h5>
+                <p class="card-text">Stock: ${productos[i].stock}</p>
+            </div>
+            <div class="card-footer text-center">
+                <p class="card-text">Precio: $${productos[i].precio}</p>
+                <a href="#" class="btn btn-success" onclick="agregarCarrito(${productos[i].codigo})">Carrito</a>
+            </div>
+        </div>
+        `;
+        contenedor.appendChild(div);
     }
 }
