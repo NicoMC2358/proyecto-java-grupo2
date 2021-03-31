@@ -3,15 +3,52 @@
     height: 35px;
 }
 
+*{
+    font-family: 'Noto Sans', sans-serif;
+}
 
 /* Estilos main */
 
-footer #footer-main{
-    background-color: black;
+.navbar{
+    padding-bottom: 20px;
+    margin-bottom: 50px;
 }
 
-ul #list-info-main{
-list-style-type:none;
+
+
+#carousel .carousel-inner img{
+    border-radius: 50px;
+    max-height: 70vh;
+    object-fit: cover;
+}
+
+#carousel{
+    margin-bottom: 20px;
+}
+
+#productos-main{
+    margin-bottom: 20px;
+}
+
+
+
+
+#footer-main{
+    min-height: 150px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgba(20, 33, 61, 1.00)
+}
+
+
+#list-info-main{
+    padding-top: 20px;
+    color: white;
+    list-style-type: none;
+}
+
+.button-contacto-main{
+    padding-top: 50px;
 }
 
 
