@@ -14,13 +14,3 @@
     height: 400px;
     object-fit: contain;
 }
-
-.boton-miguel {
-    width: 200px;
-    margin-bottom: 25px;
-}
-
-.contenedorBotonMiguel{
-    display: flex;
-    justify-content: center;
-}

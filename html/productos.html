@@ -34,9 +34,12 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <button class="btn btn-info my-2 my-sm-0 mx-1" type="submit">Log In</button>
-                        <button class="btn btn-info my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-shopping-cart pr-2"
-                                aria-hidden="true"></i>0</button>
+                        <button class="btn btn-info my-2 my-sm-0 mx-1 estiloBotonoesMiguel" type="submit">Log
+                            In</button>
+                        <button type="button" class="btn btn-info estiloBotonoesMiguel" onclick="verCarrito()">
+                            <i class="fa fa-shopping-cart mr-1" aria-hidden="true"></i>
+                            <span id="contadorCarrito" class="badge badge-light">0</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -44,6 +47,10 @@
     </header>
 
     <main>
+        <div class="container text-center my-3">
+            <button type="button" class="btn btn-info estiloBotonoesMiguel" onclick="agregarProducto()">Agregar
+                Productos</button>
+        </div>
         <section class="container">
             <div class="card bg-dark text-white my-3">
                 <img src="https://images.unsplash.com/photo-1571019613576-2b22c76fd955?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
@@ -53,43 +60,9 @@
                 </div>
             </div>
             <div id="cardsContenedor" class="card-deck mt-4">
-                <!-- <div class="card">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_843448-MLA42076733511_062020-O.webp"
-                        class="card-img-top-miguel" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="contenedorBotonMiguel">
-                        <button type="button" class="btn btn-success boton-miguel">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_793656-MLA44311117078_122020-O.webp"
-                        class="card-img-top-miguel" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                            content.</p>
-                    </div>
-                    <div class="contenedorBotonMiguel">
-                        <button type="button" class="btn btn-success boton-miguel">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_950263-MLA43374555133_092020-O.webp"
-                        class="card-img-top-miguel" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to show that equal
-                            height action.</p>
-                    </div>
-                    <div class="contenedorBotonMiguel">
-                        <button type="button" class="btn btn-success boton-miguel">Comprar</button>
-                    </div>
-                </div> -->
+                <!-- <img src="https://http2.mlstatic.com/D_NQ_NP_843448-MLA42076733511_062020-O.webp">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_793656-MLA44311117078_122020-O.webp">
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_950263-MLA43374555133_092020-O.webp"> -->
             </div>
         </section>
 
@@ -102,43 +75,7 @@
                 </div>
             </div>
             <div id="cardsContenedor" class="card-deck mt-4">
-                <!-- <div class="card">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_724421-MLA32124380610_092019-O.webp"
-                        class="card-img-top-miguel" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="contenedorBotonMiguel">
-                        <button type="button" class="btn btn-success boton-miguel">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_750367-MLA45204068067_032021-O.webp"
-                        class="card-img-top-miguel" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                            content.</p>
-                    </div>
-                    <div class="contenedorBotonMiguel">
-                        <button type="button" class="btn btn-success boton-miguel">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_916808-MLA44845909866_022021-O.webp"
-                        class="card-img-top-miguel" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to show that equal
-                            height action.</p>
-                    </div>
-                    <div class="contenedorBotonMiguel">
-                        <button type="button" class="btn btn-success boton-miguel">Comprar</button>
-                    </div>
-                </div> -->
+                ...
             </div>
         </section>
 
@@ -151,43 +88,7 @@
                 </div>
             </div>
             <div id="cardsContenedor" class="card-deck mt-4">
-                <!-- <div class="card">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_833756-MLA31325127588_072019-O.webp"
-                        class="card-img-top-miguel" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="contenedorBotonMiguel">
-                        <button type="button" class="btn btn-success boton-miguel">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_794469-MLA43459628605_092020-O.webp"
-                        class="card-img-top-miguel" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional
-                            content.</p>
-                    </div>
-                    <div class="contenedorBotonMiguel">
-                        <button type="button" class="btn btn-success boton-miguel">Comprar</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://http2.mlstatic.com/D_NQ_NP_753857-MLA31636900066_072019-O.webp"
-                        class="card-img-top-miguel" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to show that equal
-                            height action.</p>
-                    </div>
-                    <div class="contenedorBotonMiguel">
-                        <button type="button" class="btn btn-success boton-miguel">Comprar</button>
-                    </div>
-                </div> -->
+                ...
             </div>
         </section>
     </main>
@@ -196,6 +97,30 @@
         ...
     </footer>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Carrito de productos
+                    </h5>
+                    <button type="button" class="close estiloBotonoesMiguel" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer">
+                    <span>Total: </span><span id="totalCarrito"> </span>
+                    <button type="button" class="btn btn-success estiloBotonoesMiguel" data-dismiss="modal">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------------------------- -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -203,11 +128,7 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/823835b326.js"></script>
-<<<<<<< HEAD
     <script src="../js/productos.js"></script>
-=======
-    <script src="../js/app.js"></script>
->>>>>>> 616b3296c73a679b3387068f43c7136926cbd5d0
 </body>
 
 </html>
