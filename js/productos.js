@@ -10,19 +10,14 @@ class Producto {
 
 //Crear arreglo de productos
 let productos = JSON.parse(localStorage.getItem("productos")) || [];
-
 //Crear arreglo para el carrito
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-
 //Variable que suma los precios del carrito
 let sumaCarrito = 0;
-
 //Contador del badge de carrito
 let contadorCarrito = document.querySelector("#contadorCarrito");
-
 //Contenedor de las Cards de los Productos
 let contenedor = document.querySelector("#cardsContenedor");
-
 //Body del modal
 let cuerpoModal = document.querySelector(".modal-body");
 
@@ -156,13 +151,13 @@ function cargarModal() {
         let detalle = `
             <div class="row no-gutters">
                 <div class="col-md-4">
-                    <img class="imagenCarrito" src="${prod.imagen}" alt="${prod.nombre}">
+                    <img class="imagenCarritoMiguel" src="${prod.imagen}" alt="${prod.nombre}">
                 </div>
             <div class="col-md-8">
                 <div class="card-body">
                 <h5 class="card-title">${prod.cantidad} ${prod.nombre}</h5>
                 <p class="card-text">Precio: $${prod.precio}</p>
-                <a href="#" class="btn btn-danger" onclick="eliminarProdCarrito(${prod.id})" >Eliminar</a>
+                <a href="#" class="btn btn-danger" onclick="eliminarProdCarrito(${prod.id})">Eliminar</a>
                 </div>
             </div>
         </div>
@@ -186,12 +181,14 @@ function eliminarProdCarrito(id) {
     });
 
     let cantidad = carrito[index].cantidad;
+
     carrito.splice(index, 1);
     localStorage.setItem("carrito", JSON.stringify(carrito));
 
     let indexProd = productos.findIndex(function (prod) {
         return prod.codigo === id;
     });
+
     productos[indexProd].stock += cantidad;
     localStorage.setItem("productos", JSON.stringify(productos));
 
