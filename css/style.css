@@ -19,3 +19,8 @@
     width: 150px;
     object-fit: contain;
 }
+
+#navbarNav {
+    display: flex;
+    justify-content: space-around;
+}
