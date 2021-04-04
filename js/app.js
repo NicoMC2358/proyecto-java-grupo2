@@ -80,7 +80,7 @@ function validarGeneral(event){
     validarCheck()){
       alerta.className="alert alert-success my-3"
       alerta.innerHTML= "Los datos se enviaron correctamente"
-   
+
     }else{
       alerta.className="alert alert-warning alert-dismissible fade show my-3"
       alerta.innerHTML= "Ocurrio un error, verifique los datos ingresados"

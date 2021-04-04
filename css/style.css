@@ -7,13 +7,11 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
-/* Estilos main */
-
-.navbar{
-    padding-bottom: 20px;
-    margin-bottom: 50px;
+#bg-color{
+    background-color: rgba(229, 229, 229, 1.00);
 }
 
+/* Estilos main */
 
 
 #carousel .carousel-inner img{
@@ -22,34 +20,65 @@
     object-fit: cover;
 }
 
-#carousel{
-    margin-bottom: 20px;
-}
-
-#productos-main{
-    margin-bottom: 20px;
-}
-
-
 
 
 #footer-main{
     min-height: 150px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    background-color: rgba(20, 33, 61, 1.00)
-}
-
-
-#list-info-main{
-    padding-top: 20px;
+    border-radius: 20px;
     color: white;
+    background-color: rgba(20, 33, 61, 1.00)   
+}
+
+#list-qk{
     list-style-type: none;
+    color: rgba(229, 229, 229, 1.00);
 }
 
-.button-contacto-main{
-    padding-top: 50px;
+
+.img-pago{
+    max-height: 30px;
+    border-radius: 10px;
 }
 
+
+#footer-copyright{
+    color: white;
+    padding-top: 20px;
+    max-width: 97%;
+    border-radius: 20px;
+    background-color: rgba(252, 163, 17, 1.00);
+}
 
 /* Fin estilos main */
+
+/* Estilos Turnos */
+
+.calendar{
+    max-height: 90%;
+    max-width: 90%;
+}
+
+.list-semana{
+    background-color: rgba(20, 33, 61, 1.00)  
+}
+
+@media (max-width:575px) {
+    .display-4 {
+        font-size: 50px;
+    }
+    .day h5 {
+        background-color: #f8f9fa;
+        padding: 3px 5px 5px;
+        margin: -8px -8px 8px -8px;
+    }
+    .date {
+        padding-left: 4px;
+    }
+}
+
+@media (min-width: 576px) {
+    .day {
+        height: 14.2857vw;
+    }
+}
+/* Fin Estilo Turnos */

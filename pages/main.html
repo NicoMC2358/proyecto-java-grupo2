@@ -13,32 +13,37 @@
     <title>Ritmo Latino!</title>
 </head>
 
-<body>
+<body id="bg-color">
     <!-- Inicio de Header -->
     <header>
-        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark nav-item-main">
-            <a class="navbar-brand" href="#">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Turnos <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Productos <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Contacto <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <button class="btn btn-info my-2 my-sm-0 mx-1" type="submit">Log In</button>
-                    <button class="btn btn-info my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-shopping-cart pr-2"
-                            aria-hidden="true"></i>0</button>
-                </form>
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark nav-item-main mb-3">
+            <div class="container">
+                <a class="navbar-brand" href="main.html"><img src="../img/logo/logo.png" alt="Logo del Gimnasio"
+                        class="gimnasioLogo mr-2">Ritmo Latino</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="turnos.html">Turnos <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="productos.html">Productos <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="contacto.html">Contacto <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <button class="btn btn-info my-2 my-sm-0 mx-1" type="submit">Log In</button>
+                        <button class="btn btn-info my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-shopping-cart pr-2"
+                                aria-hidden="true"></i>0</button>
+                    </form>
+                </div>
             </div>
         </nav>
     </header>
@@ -47,14 +52,14 @@
     <main>
         <div class="container-fluid">
             <!-- Seccion con carousel -->
-            <section id="carousel">
+            <section id="carousel" class="mb-3">
                 <div class="row justify-content-center">
                     <div class="col">
                         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel2" data-slide-to="1"></li>
+                                <li data-target="#carousel3" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -85,10 +90,13 @@
             <!-- Fin seccion con el carousel -->
             <!-- Seccion con productos -->
             <section id="productos-main">
-                <div class="row">
-                    <div class="col">
-                        <h1><button type="button" class="btn btn-info btn-lg btn-block">Productos mas vendidos</button>
-                        </h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1><button type="button" class="btn btn-info btn-lg btn-block">Productos mas
+                                    vendidos</button>
+                            </h1>
+                        </div>
                     </div>
                 </div>
                 <div class="row row-cols-1 row-cols-md-4">
@@ -140,20 +148,49 @@
     <!-- Fin de Main -->
     <!-- Inicio de Footer -->
     <footer id="footer-main">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-10">
-                    <ul id="list-info-main">
-                        <li>Direccion</li>
-                        <li>Horarios</li>
-                        <li>example@gmail.com</li>
-                        <li>+54 381 2286338</li>
+                <h4><b>Medios de pago</b></h4>
+                <div class="d-flex justify-content-between">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"
+                        alt="Visa" class="img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"
+                        alt="MasterCard" class="img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"
+                        alt="American Express" class="img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"
+                        alt="MercadoPago" class="img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png"
+                        alt="Pago Facil" class="img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"
+                        alt="Rapipago" class="img-pago">
+                </div>
+            </div>
+            <div class="row d-flex justify-content-around">
+                <div class="col-4">
+                    <h5><b>Quick Links</b></h5>
+                    <ul id="list-qk">
+                        <li>Home</li>
+                        <li>Turnos</li>
+                        <li>Productos</li>
+                        <li>Contacto</li>
                     </ul>
                 </div>
-                <div class="col-2 align-content-between button-contacto-main">
-                    <a href="contacto.html" class="btn btn-info btn-lg active" role="button"
-                        aria-pressed="true">Contacto</a>
+                <div class="col-4">
+                    <h5><b>Nuestro Contacto</b></h5>
                 </div>
+                <div class="col-4">
+                    <h5><b>Redes Sociales</b></h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <footer id="footer-copyright">
+        <div class="container">
+            <div class="d-flex justify-content-around">
+                <p>
+                    ©Copyright 2021 Todos los derechos reservados
+                </p>
             </div>
         </div>
     </footer>
