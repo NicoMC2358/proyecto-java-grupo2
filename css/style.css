@@ -2,3 +2,34 @@
     width: 45px;
     height: 35px;
 }
+
+/*GABO */
+
+.emailInput{
+    text-decoration: none;
+    border: solid 1px #707070;
+    border-radius: 10px ;
+    color: white;
+    background: rgba(252, 163, 17, 1.00);
+}
+
+.registrarBoton{
+    text-decoration: none;
+    border: solid 1px #707070;
+    border-radius: 10px ;
+    color: white;
+    background: rgba(252, 163, 17, 1.00);
+    
+}
+.botonfacebook{
+    text-decoration: none;
+    border: solid 1px #707070;
+    border-radius: 10px ;
+    color: #707070;
+    
+}
+.botonfacebook:hover{
+    text-decoration: none;
+    color: white;
+    background: #4072fa;
+}
