@@ -1,8 +1,13 @@
+*{
+    font-family: 'Noto Sans', sans-serif;
+}
+
 .gimnasioLogo {
     width: 45px;
     height: 35px;
 }
 
+/* Estilos Seccion Productos */
 .card-img-miguel {
     width: 100%;
     height: 150px;
@@ -23,4 +28,41 @@
 #navbarNav {
     display: flex;
     justify-content: space-around;
+}
+
+/* Estilos main */
+.navbar{
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+}
+
+#carousel .carousel-inner img{
+    border-radius: 50px;
+    max-height: 70vh;
+    object-fit: cover;
+}
+
+#carousel{
+    margin-bottom: 20px;
+}
+
+#productos-main{
+    margin-bottom: 20px;
+}
+
+#footer-main{
+    min-height: 150px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgba(20, 33, 61, 1.00)
+}
+
+#list-info-main{
+    padding-top: 20px;
+    color: white;
+    list-style-type: none;
+}
+
+.button-contacto-main{
+    padding-top: 50px;
 }
