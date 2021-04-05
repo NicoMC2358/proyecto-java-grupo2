@@ -1,6 +1,6 @@
-*{
+/* *{
     font-family: 'Noto Sans', sans-serif;
-}
+} */
 
 .gimnasioLogo {
     width: 45px;
@@ -31,10 +31,10 @@
 }
 
 /* Estilos main */
-.navbar{
+/* .navbar{
     padding-bottom: 20px;
     margin-bottom: 50px;
-}
+} */
 
 #carousel .carousel-inner img{
     border-radius: 50px;
