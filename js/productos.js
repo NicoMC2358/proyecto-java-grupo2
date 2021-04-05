@@ -57,7 +57,7 @@ function agregarProducto() {
                     }
 
                     productos.push(
-                        new Producto(codigo, nombre.toUpperCase(), precio.toFixed(2), stock, imagen)
+                        new Producto(codigo, nombre.toUpperCase(), precio, stock, imagen)
                     );
                 }
             }
