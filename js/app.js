@@ -89,3 +89,34 @@ function validarGeneral(event){
 
 }
 
+// ===============Email JS===================== 
+
+var templateParamsBienvenida = {
+  from_name:'RITMO LATINO',
+	user_name:'Gente de rolling',
+	destinatario:'gabegarcia916@gmail.com',
+	message:'Bienvenido a RITMO LATINO'
+};
+function enviarMailBienvenida(){
+emailjs.send('service_pru7jpa', 'template_ojqof6y', templateParamsBienvenida)
+  .then(function(response) {
+     console.log('SUCCESS!', response.status, response.text);
+  }, function(error) {
+     console.log('FAILED...', error);
+  });
+}
+
+var templateParamsConsulta = {
+  from_name:'RITMO LATINO',
+	user_name:'Gente de rolling',
+	destinatario:'gabegarcia916@gmail.com',
+	message:'Tu consulta fue enviada con exito'
+};
+function enviarMailConsulta(){
+  emailjs.send('service_pru7jpa', 'template_ojqof6y', templateParamsConsulta)
+    .then(function(response) {
+       console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+       console.log('FAILED...', error);
+    });
+  }

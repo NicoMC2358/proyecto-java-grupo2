@@ -25,18 +25,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="../html/main.html">Turnos <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="../html/main.html">Turnos <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../html/productos.html">Productos <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="../html/productos.html">Productos <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="../html/contacto.html">Contacto <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="../html/contacto.html">Contacto <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-              
-                        <a class="btn btn-info my-2 my-sm-0 mx-1" href="../html/login.html" >Log In</a>
+
+                        <a class="btn btn-info my-2 my-sm-0 mx-1" href="../html/login.html">Log In</a>
                         <button class="btn btn-info my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-shopping-cart pr-2"
                                 aria-hidden="true"></i>0</button>
                     </form>
@@ -80,9 +83,9 @@
                                     Ingrese un email valido
                                 </div>
                             </div>
-    
+
                             <div class="mb-3">
-    
+
                                 <label class="form-label">Telefono</label>
                                 <input type="number" class="form-control" placeholder="3816555777" id="telefono"
                                     onblur="validarNumeros(this)">
@@ -94,8 +97,8 @@
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Consulta</label>
-                                <textarea type="text" class="form-control" placeholder="Ingrese se consulta" id="consulta"
-                                    onblur="validarCantidadCaracteres(this)"></textarea>
+                                <textarea type="text" class="form-control" placeholder="Ingrese se consulta"
+                                    id="consulta" onblur="validarCantidadCaracteres(this)"></textarea>
                                 <div class="invalid-feedback">
                                     Por favor ingrese una consulta de almenos 10 caracteres
                                 </div>
@@ -103,23 +106,24 @@
                             <div class="mb-3">
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" id="checkTermino">
-                                    <label class="form-check-label">Esta de acuerdo con los terminos y condiciones</label>
+                                    <label class="form-check-label">Esta de acuerdo con los terminos y
+                                        condiciones</label>
                                     <div class="invalid-feedback">
                                         Para continuar debe aceptar los terminos y condiciones
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-primary" type="submit">Enviar</button>
+                            <button class="btn btn-primary" type="submit" onclick="enviarMailConsulta()">Enviar</button>
                             <div id="msjEnvio"></div>
-    
-    
+
+
                         </form>
                     </div>
-    
+
                 </div>
 
 
-                </div>
+            </div>
             </div>
 
 
@@ -138,6 +142,14 @@
     <script src="https://use.fontawesome.com/823835b326.js"></script>
 
     <script src="../js/app.js"></script>
+
+    <!-- EMAIL JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_o3QY1JwehbsYLsqDqLPou");
+        })();
+    </script>
 </body>
 
 </html>
