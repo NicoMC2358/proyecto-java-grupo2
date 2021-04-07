@@ -1,7 +1,8 @@
 class Producto {
-    constructor(codigo, nombre, precio, stock, imagen) {
+    constructor(codigo, nombre, categoria, precio, stock, imagen) {
         this.codigo = codigo
         this.nombre = nombre
+        this.categoria = categoria
         this.precio = precio
         this.stock = stock
         this.imagen = imagen
@@ -37,28 +38,35 @@ function agregarProducto() {
             console.error("No se ingreso el dato o se puso un número en el nombre");
             return;
         } else {
-            let precio = parseFloat(prompt("Ingrese el precio del producto"));
+            let categoria = prompt(`Ingrese la categoria del producto (Ropa Deportiva, Fitness y Musculacion o Suplementos y Shakers)`);
 
-            if (isNaN(precio) || precio <= 0) {
-                console.error("No se ingresó un número o se canceló");
+            if (categoria === "" || categoria === null || !isNaN(categoria)) {
+                console.error("No se ingreso el dato o se puso un número en la categoria");
                 return;
             } else {
-                let stock = parseFloat(prompt("Ingrese el stock del producto"));
+                let precio = parseFloat(prompt("Ingrese el precio del producto"));
 
-                if (isNaN(stock) || stock <= 0) {
+                if (isNaN(precio) || precio <= 0) {
                     console.error("No se ingresó un número o se canceló");
                     return;
                 } else {
-                    let imagen = (prompt("Ingrese el link de la imagen del producto"));
+                    let stock = parseFloat(prompt("Ingrese el stock del producto"));
 
-                    if (imagen === "" || imagen === null) {
-                        console.error("No se ingresó el dato o se canceló");
+                    if (isNaN(stock) || stock <= 0) {
+                        console.error("No se ingresó un número o se canceló");
                         return;
-                    }
+                    } else {
+                        let imagen = (prompt("Ingrese el link de la imagen del producto"));
 
-                    productos.push(
-                        new Producto(codigo, nombre.toUpperCase(), precio, stock, imagen)
-                    );
+                        if (imagen === "" || imagen === null) {
+                            console.error("No se ingresó el dato o se canceló");
+                            return;
+                        }
+
+                        productos.push(
+                            new Producto(codigo, nombre.toUpperCase(), categoria.toUpperCase(), precio, stock, imagen)
+                        );
+                    }
                 }
             }
         }
@@ -85,7 +93,9 @@ function cargarCard() {
         <div class="card border-secondary mb-3">
             <img src="${productos[i].imagen}" class="card-img-top-miguel imgCard" alt="${productos[i].nombre}" />
             <div class="card-body">
-                <h5 class="card-title">${productos[i].nombre}</h5>
+                <h4 class="card-title">${productos[i].nombre}</h4>
+                <hr>
+                <p class="card-categoria">${productos[i].categoria}</p>
                 <p class="card-text">Stock: ${productos[i].stock}</p>
             </div>
             <div class="card-footer text-center">
@@ -117,6 +127,7 @@ function agregarCarrito(codigo) {
             carrito.push({
                 id: productos[indexProd].codigo,
                 nombre: productos[indexProd].nombre,
+                categoria: productos[indexProd].categoria,
                 precio: productos[indexProd].precio,
                 imagen: productos[indexProd].imagen,
                 cantidad: 1,
@@ -155,7 +166,9 @@ function cargarModal() {
                 </div>
             <div class="col-md-8">
                 <div class="card-body">
-                <h5 class="card-title">${prod.cantidad} ${prod.nombre}</h5>
+                <h4 class="card-title">${prod.cantidad} ${prod.nombre}</h4>
+                <hr>
+                <p class="card-categoria">${prod.categoria}</p>
                 <p class="card-text">Precio: $${prod.precio}</p>
                 <a href="#" class="btn btn-danger" onclick="eliminarProdCarrito(${prod.id})">Eliminar</a>
                 </div>

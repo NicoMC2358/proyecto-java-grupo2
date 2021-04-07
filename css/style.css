@@ -25,16 +25,11 @@
     object-fit: contain;
 }
 
-#navbarNav {
-    display: flex;
-    justify-content: space-around;
-}
-
 /* Estilos main */
-/* .navbar{
+.navbar{
     padding-bottom: 20px;
-    margin-bottom: 50px;
-} */
+    /* margin-bottom: 50px; */
+}
 
 #carousel .carousel-inner img{
     border-radius: 50px;
