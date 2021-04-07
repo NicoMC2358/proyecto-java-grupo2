@@ -14,24 +14,40 @@
 
 <body id="body">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="login.html">CompraYa.com</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="../img/logo/logo.png" alt="Logo del Gimnasio" class="gimnasioLogo mr-2">
+                <a class="navbar-brand" href="../html/main.html">Nombre</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li>
-                            <a href="login.html"><i class="fa fa-sign-out fa-2x text-white" aria-hidden="true"></i></a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../html/main.html">Turnos <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../html/productos.html">Productos <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../html/contacto.html">Contacto <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                     </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <button class="btn btn-warning my-2 my-sm-0 mx-1" type="submit">Log In</button>
+                        <button class="btn btn-warning my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-shopping-cart pr-2"
+                                aria-hidden="true"></i>0</button>
+                    </form>
                 </div>
             </div>
         </nav>
     </header>
-    
+
     <section>
         <div class="container" id="contenedor_principal">
             <div class="row">
@@ -65,7 +81,7 @@
                     <h3>Productos</h3>
                 </div>
                 <div class="col text-right mb-3">
-                    <button class="btn btn-warning" onclick="newProd()">Nuevo</button>
+                    <button class="btn btn-warning" onclick="nuevoProdModal()">Nuevo</button>
                 </div>
             </div>
             <div class="row">
@@ -114,6 +130,57 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="nuevoProdModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Producto</label>
+                                <input type="text" class="form-control" id="inputEmail4">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Precio</label>
+                                <input type="number" class="form-control" id="inputPassword4" placeholder="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Imagen</label>
+                            <input type="text" class="form-control" id="inputAddress">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">Stock</label>
+                                <input type="number" class="form-control" id="inputCity" placeholder="0">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputState">Categoria</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>Ninguna</option>
+                                    <option>Ropa Deportiva</option>
+                                    <option>Fitness y Musculacion</option>
+                                    <option>Suplementos y Shakers</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success">Agregar Producto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!------------------------------------------------->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
