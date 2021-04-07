@@ -17,8 +17,10 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 let sumaCarrito = 0;
 //Contador del badge de carrito
 let contadorCarrito = document.querySelector("#contadorCarrito");
-//Contenedor de las Cards de los Productos
-let contenedor = document.querySelector("#cardsContenedor");
+//Contenedores de las Cards de los Productos
+let contenedor = document.querySelector("#ropaContenedor");
+let contenedor1 = document.querySelector("#muscleContenedor");
+let contenedor2 = document.querySelector("#suplementosContenedor");
 //Body del modal
 let cuerpoModal = document.querySelector(".modal-body");
 
@@ -64,7 +66,7 @@ function agregarProducto() {
                         }
 
                         productos.push(
-                            new Producto(codigo, nombre.toUpperCase(), categoria.toUpperCase(), precio, stock, imagen)
+                            new Producto(codigo, nombre.toUpperCase(), categoria.toLocaleLowerCase(), precio, stock, imagen)
                         );
                     }
                 }
@@ -85,7 +87,7 @@ function cantidadCarrito() {
 }
 
 function cargarCard() {
-    contenedor.innerHTML = "";
+    // contenedor.innerHTML = "";
     for (let i = 0; i < productos.length; i++) {
         let div = document.createElement("div");
         div.classList = "col col-md-6 col-lg";
@@ -104,7 +106,17 @@ function cargarCard() {
             </div>
         </div>
         `;
-        contenedor.appendChild(div);
+        switch (productos[i].categoria) {
+            case "ropa deportiva":
+                contenedor.appendChild(div);
+                break;
+            case "fitness y musculacion":
+                contenedor1.appendChild(div);
+                break;
+            case "suplementos y shakers":
+                contenedor2.appendChild(div);
+                break;
+        }
     }
 }
 
