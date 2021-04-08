@@ -85,7 +85,9 @@
                                 <article class="row">
                                     <div class="col-lg-6 col-md-6 col-sm-6 text-left">
                                         <div class="form-group form-check">
-                                            <input type="checkbox" class="form-check-input" id="recuerdame">
+                                            <input type="checkbox" class="form-check-input" id="recuerdame" >
+                                            
+
                                             <label class="form-check-label">Recuerdame</label>
                                         </div>
                                     </div>
@@ -118,7 +120,12 @@
                                                     <div>
                                                         <input required type="email"
                                                             placeholder="Ingresa tu correo electronico"
-                                                            class="form-control" />
+                                                            class="form-control" onclick="validarMail(this)" />
+                                                            <div class="valid-feedback">
+                                                            </div>
+                                                            <div class="invalid-feedback">
+                                                                Ingrese un email valido
+                                                            </div>
                                                     </div>
                                                     <div class="d-flex justify-content-center">
                                                         <button type="submit"

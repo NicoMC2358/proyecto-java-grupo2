@@ -1,3 +1,4 @@
+
 function campoRequerido(elemento) {
   console.log("en la funcion campo requerido");
   //   let elemento = document.querySelector('#nombre');
@@ -70,7 +71,7 @@ function validarCheck(){
 function validarGeneral(event){
     event.preventDefault(); //Cancela el evento si este es cancelable, sin detener el resto del funcionamiento del evento, es decir, puede ser llamado de nuevo. basicamente no me permite actualizar la pantalla 
     console.log('dentro de la funcion validar general' + event);
-
+    let mensaje=[];
 
     let alerta=document.getElementById("msjEnvio");
     if(campoRequerido(document.getElementById('nombre')) &&
@@ -78,41 +79,49 @@ function validarGeneral(event){
     validarNumeros(document.getElementById('telefono')) &&
     validarCantidadCaracteres(document.getElementById('consulta')) &&
     validarCheck()){
+      
       alerta.className="alert alert-success my-3"
       alerta.innerHTML= "Los datos se enviaron correctamente"
+      let nombre=document.querySelector("#nombre").value;
+      let telefono=document.querySelector("#telefono").value;
+      let email=document.querySelector("#email").value;
+      let consulta=document.querySelector("#consulta").value;
+
+      mensaje.push(nombre);
+      mensaje.push(telefono);
+      mensaje.push(email);
+      mensaje.push(consulta);
+      // mensaje.push(JSON.stringify(nombre));
+      // mensaje.push(JSON.stringify(telefono));
+      // mensaje.push(JSON.stringify(email));
+      // mensaje.push(JSON.stringify(consulta));
+      // console.log(mensaje);
+      enviarMailConsulta(mensaje);
    
     }else{
       alerta.className="alert alert-warning alert-dismissible fade show my-3"
       alerta.innerHTML= "Ocurrio un error, verifique los datos ingresados"
     
     }
+    
 
 }
 
 // ===============Email JS===================== 
 
-var templateParamsBienvenida = {
-  from_name:'RITMO LATINO',
-	user_name:'Gente de rolling',
-	destinatario:'gabegarcia916@gmail.com',
-	message:'Bienvenido a RITMO LATINO'
-};
-function enviarMailBienvenida(){
-emailjs.send('service_pru7jpa', 'template_ojqof6y', templateParamsBienvenida)
-  .then(function(response) {
-     console.log('SUCCESS!', response.status, response.text);
-  }, function(error) {
-     console.log('FAILED...', error);
-  });
-}
-
+function enviarMailConsulta(array){
+  console.log(array);
 var templateParamsConsulta = {
   from_name:'RITMO LATINO',
-	user_name:'Gente de rolling',
-	destinatario:'gabegarcia916@gmail.com',
-	message:'Tu consulta fue enviada con exito'
+	user_name: array[0],
+	destinatario: array[2],
+	message: array[3]
 };
-function enviarMailConsulta(){
+// console.log(templateParamsConsulta.from_name);
+// console.log(templateParamsConsulta.user_name);
+// console.log(templateParamsConsulta.destinatario);
+// console.log(templateParamsConsulta.message);
+
   emailjs.send('service_pru7jpa', 'template_ojqof6y', templateParamsConsulta)
     .then(function(response) {
        console.log('SUCCESS!', response.status, response.text);

@@ -43,6 +43,7 @@
     padding: 16px;
     right:150px;
 }
+
 /* Seccion login */
   
   .bg-img {
@@ -125,7 +126,17 @@ a {
   border-radius: 10px;
   background:   rgba(255, 255, 255, 1.00);
 }
+
+
+
+
+/* ============================= */
 /* device md-medio */
+/* ============================= */
+
+
+
+
 @media all and (min-width: 768px) and (max-width: 991px){
   .tituloLogin{
     text-align: center;
@@ -151,8 +162,9 @@ a {
   } 
 }
 
-
+/* ================================================ */
 /* Media pequeno */
+/* ================================================ */
 @media all and (min-width: 322px) and (max-width: 767px){
   .tituloLogin{
     text-align: center;
