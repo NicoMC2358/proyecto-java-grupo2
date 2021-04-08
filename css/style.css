@@ -11,7 +11,7 @@
     border-radius: 10px ;
     color: white;
     background: rgba(252, 163, 17, 1.00);
-    opacity:0.2;
+    opacity:0.6;
 }
 .emailInput:hover{
     opacity: 1;
@@ -47,14 +47,14 @@
   
   .bg-img {
     /* The image used */
-    background-image: url("https://images.pexels.com/photos/669580/pexels-photo-669580.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+    background-image: url("https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
   
     /* Control the height of the image */
     min-height: 380px;
   
     /* Center and scale the image nicely */
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
     position: relative;
   }
@@ -75,4 +75,110 @@
     outline: none;
   }
   
-  /* Set a style for the submit button */
+/* Titulo login */
+@font-face {
+	font-family: "ubuntu";
+	font-style: italic;
+	font-weight: 300;
+	src: local("Lato Light Italic"), local("Lato-LightItalic"),
+		url(https://fonts.gstatic.com/s/ubuntucondensed/v8/u-4k0rCzjgs5J7oXnJcM_0kACGMtT-Dfqw.woff2)
+			format("woff2");
+}
+
+
+a {
+	text-decoration: none;
+	color: #9ca0b1;
+}
+
+.tituloLogin {
+	text-align: center;
+	
+		color: #fff;
+		font-size: 92px;
+		font-family: "ubuntu";
+		text-transform: uppercase;
+		font-weight: 700;
+		font-family: "Josefin Sans", sans-serif;
+		background: linear-gradient(to right,#000000 10%, #ffffff  50%,  rgba(252, 163, 17, 1.00) 60%);
+		background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+		color: #fff;
+		background-clip: text;
+		color: transparent;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textclip 1.5s linear infinite;
+		display: inline-block;
+	
+}
+
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+
+.bg-form{
+  border: 3px solid rgba(255, 255, 255, 1.00);
+  border-radius: 10px;
+  background:   rgba(255, 255, 255, 1.00);
+}
+/* device md-medio */
+@media all and (min-width: 768px) and (max-width: 991px){
+  .tituloLogin{
+    text-align: center;
+	
+		color: #fff;
+		font-size: 70px;
+		font-family: "ubuntu";
+		text-transform: uppercase;
+		font-weight: 700;
+		font-family: "Josefin Sans", sans-serif;
+		background: linear-gradient(to right,#000000 10%, #ffffff  50%,  rgba(252, 163, 17, 1.00) 60%);
+		background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+		color: #fff;
+		background-clip: text;
+		color: transparent;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textclip 1.5s linear infinite;
+		display: inline-block;
+	
+  } 
+}
+
+
+/* Media pequeno */
+@media all and (min-width: 322px) and (max-width: 767px){
+  .tituloLogin{
+    text-align: center;
+	
+		color: #fff;
+		font-size: 50px;
+		font-family: "ubuntu";
+		text-transform: uppercase;
+		font-weight: 700;
+		font-family: "Josefin Sans", sans-serif;
+		background: linear-gradient(to right,#000000 10%, #ffffff  50%,  rgba(252, 163, 17, 1.00) 60%);
+		background-size: auto auto;
+		background-clip: border-box;
+		background-size: 200% auto;
+		color: #fff;
+		background-clip: text;
+		color: transparent;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: textclip 1.5s linear infinite;
+		display: inline-block;
+	
+  } 
+}
+
+
+
+
+
