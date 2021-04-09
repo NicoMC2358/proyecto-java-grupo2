@@ -87,7 +87,7 @@ function cantidadCarrito() {
 }
 
 function cargarCard() {
-    // contenedor.innerHTML = "";
+    contenedor.innerHTML = "";
     for (let i = 0; i < productos.length; i++) {
         let div = document.createElement("div");
         div.classList = "col col-md-6 col-lg";
