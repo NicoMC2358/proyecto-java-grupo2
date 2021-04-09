@@ -34,7 +34,7 @@ body{
 }
 
 #footer-main{
-    min-height: 150px;
+    min-height: 500px;
     color: white;
     background-color: rgba(20, 33, 61, 1.00)   
 }
@@ -58,6 +58,10 @@ a:hover{
 .img-pago{
     max-height: 30px;
     border-radius: 10px;
+}
+
+.map{
+    border-radius: 20px;
 }
 
 #footer-copyright{
