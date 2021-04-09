@@ -88,9 +88,11 @@ function cantidadCarrito() {
 
 function cargarCard() {
     contenedor.innerHTML = "";
+    contenedor1.innerHTML = "";
+    contenedor2.innerHTML = "";
     for (let i = 0; i < productos.length; i++) {
         let div = document.createElement("div");
-        div.classList = "col col-md-6 col-lg";
+        div.classList = "col-12 col-md-6 col-lg-4 test";
         div.innerHTML = `
         <div class="card border-secondary mb-3">
             <img src="${productos[i].imagen}" class="card-img-top-miguel imgCard" alt="${productos[i].nombre}" />
