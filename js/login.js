@@ -7,7 +7,6 @@ class Usuario {
     }
   }
 
-
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 let usuario = {};// es un objeto vacio
@@ -73,3 +72,66 @@ document.querySelector("#btnSubmit").addEventListener("submit", function (event)
     event.preventDefault();
     validar();
 });
+
+
+
+
+
+/* ================================================= */
+/* =============Recuperar contrasenia============= */
+/* ================================================= */
+function randomPassword(){
+    return new Date().getTime()
+}
+let formularioRecu = document.querySelector('#recuperarSubmit');
+formularioRecu.addEventListener("submit",function(event){
+    event.preventDefault;
+    let email=document.querySelector("mailRecu").value;
+
+    let validar = usuarios.find(function(user){
+        return user.email===email;
+    });
+    let index = usuarios.findIndex(function(user){
+        return user.email===email;
+    });
+    if(validar!== undefined){
+        console.log("encontro un usuario con ese mail");
+        let newPassword=randomPassword();
+        let emailOG = usuarios[index].email;
+        let idOG=usuarios[index].id;
+        // que hago con el activo?
+        usuarios.splice(index,1);
+        usuarios.push({
+            id: idOG,
+            email: emailOG,
+            password: newPassword,
+            activo: true
+        });
+        let mensaje = ['Querido socio','telefono',JSON.stringify(emailOG),`su nueva contraseña es ${newPassword}`];
+        enviarMailRecuperacionPassword(mensaje);
+        
+    } else {
+        console.log("No se encontro ningun usuario con ese mail");
+
+
+    }
+})
+
+ // ===============Email JS===================== 
+  
+ function enviarMailRecuperacionPassword(array){
+    console.log(array);
+  var templateParamsConsulta = {
+    from_name:'RITMO LATINO',
+      user_name: array[0],
+      destinatario: array[2],
+      message: array[3]
+  };
+  
+    emailjs.send('service_pru7jpa', 'template_ojqof6y', templateParamsConsulta)
+      .then(function(response) {
+         console.log('SUCCESS!', response.status, response.text);
+      }, function(error) {
+         console.log('FAILED...', error);
+      });
+    }

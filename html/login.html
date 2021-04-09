@@ -116,11 +116,11 @@
                                                 <p class="text-center">Ingrese el correo electrónico
                                                     vinculado a la cuenta y le enviaremos un link para poder
                                                     recuperar su contraseña</p>
-                                                <form class="py-3">
+                                                <form class="py-3" id="recuperarSubmit">
                                                     <div>
                                                         <input required type="email"
                                                             placeholder="Ingresa tu correo electronico"
-                                                            class="form-control" onclick="validarMail(this)" />
+                                                            class="form-control" onblur="validarMail(this)" id="mailRecu" />
                                                             <div class="valid-feedback">
                                                             </div>
                                                             <div class="invalid-feedback">
@@ -129,8 +129,7 @@
                                                     </div>
                                                     <div class="d-flex justify-content-center">
                                                         <button type="submit"
-                                                            class="boton2 px-2 py-1 my-2 d-block text-center w-75"
-                                                            onclick="enviarMailBienvenida()">Enviar</button>
+                                                            class="boton2 px-2 py-1 my-2 d-block text-center w-75">Enviar</button>
                                                     </div>
                                                 </form>
                                                 <hr>

@@ -91,11 +91,7 @@ function campoRequerido(elemento) {
         mensaje.push(telefono);
         mensaje.push(email);
         mensaje.push(consulta);
-        // mensaje.push(JSON.stringify(nombre));
-        // mensaje.push(JSON.stringify(telefono));
-        // mensaje.push(JSON.stringify(email));
-        // mensaje.push(JSON.stringify(consulta));
-        // console.log(mensaje);
+       
         enviarMailConsulta(mensaje);
      
       }else{
