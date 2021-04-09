@@ -20,20 +20,33 @@
     object-fit: cover;
 }
 
-
+.turnos-bnt{
+    color: white;
+}
 
 #footer-main{
     min-height: 150px;
-    border-radius: 20px;
     color: white;
     background-color: rgba(20, 33, 61, 1.00)   
 }
 
+
+
 #list-qk{
     list-style-type: none;
-    color: rgba(229, 229, 229, 1.00);
+    color: white;
+    text-align: center;
 }
 
+a:link{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    text-decoration: none;
+    color: rgba(252, 163, 17, 1.00);
+}
 
 .img-pago{
     max-height: 30px;
@@ -44,8 +57,6 @@
 #footer-copyright{
     color: white;
     padding-top: 20px;
-    max-width: 97%;
-    border-radius: 20px;
     background-color: rgba(252, 163, 17, 1.00);
 }
 
