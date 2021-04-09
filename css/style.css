@@ -7,6 +7,10 @@
     font-family: 'Noto Sans', sans-serif;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 #bg-color{
     background-color: rgba(229, 229, 229, 1.00);
 }
@@ -18,10 +22,15 @@
     border-radius: 50px;
     max-height: 70vh;
     object-fit: cover;
+    filter: grayscale(70%);
 }
 
 .turnos-bnt{
     color: white;
+}
+
+.img-carousel img{
+    filter: blur(100);
 }
 
 #footer-main{
@@ -29,8 +38,6 @@
     color: white;
     background-color: rgba(20, 33, 61, 1.00)   
 }
-
-
 
 #list-qk{
     list-style-type: none;
@@ -53,7 +60,6 @@ a:hover{
     border-radius: 10px;
 }
 
-
 #footer-copyright{
     color: white;
     padding-top: 20px;
@@ -73,23 +79,12 @@ a:hover{
     background-color: rgba(20, 33, 61, 1.00)  
 }
 
-@media (max-width:575px) {
-    .display-4 {
-        font-size: 50px;
-    }
-    .day h5 {
-        background-color: #f8f9fa;
-        padding: 3px 5px 5px;
-        margin: -8px -8px 8px -8px;
-    }
-    .date {
-        padding-left: 4px;
-    }
+.bg-calendar-nextmonth{
+    background-color: beige;
 }
 
-@media (min-width: 576px) {
-    .day {
-        height: 14.2857vw;
-    }
+.bg-calendar{
+    background-color: white;
 }
+
 /* Fin Estilo Turnos */
