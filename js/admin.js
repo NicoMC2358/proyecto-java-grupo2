@@ -20,7 +20,7 @@ let productTable = document.querySelector("#productTable");
 
 let bodyModificaModal = document.querySelector("#bodyModificaModal");
 
-if (user) {
+if (user.id === 9999) {
     function cargarTablaUsuarios() {
         tableUser.innerHTML = "";
 
@@ -29,20 +29,18 @@ if (user) {
             let tr = document.createElement("tr");
             if (user.usuario === "admin") {
                 contenido = `
-    <th scope="row">${user.usuario}</th>
-    <td>${user.nombre}</td>
-    <td>${user.email}</td>
-    <td class="text-center">${user.activo}</td>     
-    `;
+        <th scope="row" class="text-center">${user.usuario}</th>
+            <td class="text-center">${user.nombre}</td>
+            <td class="text-center">${user.email}</td>
+            <td class="text-center">${user.activo}</td>     
+        `;
             } else {
                 contenido = `
-        <th scope="row">${user.usuario}</th>
-        <td>${user.nombre}</td>
-        <td>${user.email}</td>
-        <td class="text-center">${user.activo}</td>
-        <td class="text-center">
-        <a href="#" class="boton-${user.activo}" onclick="activarUser(${user.id})"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a> 
-        </td>`;
+        <th scope="row" class="text-center">${user.usuario}</th>
+            <td class="text-center">${user.nombre}</td>
+            <td class="text-center">${user.email}</td>
+            <td class="text-center">${user.activo}</td>
+            <td class="text-center"><a href="#" class="boton-${user.activo}" onclick="activarUser(${user.id})"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a></td>`;
             }
             tr.innerHTML = contenido;
             tableUser.appendChild(tr);
@@ -64,9 +62,9 @@ if (user) {
             let contenido = "";
             let tr = document.createElement("tr");
             contenido = `
-        <th scope="row">${prod.codigo}</th>
-        <td>${prod.nombre}</td>
-        <td>$${prod.precio}</td>
+        <th scope="row" class="text-center">${prod.codigo}</th>
+        <td class="text-center">${prod.nombre}</td>
+        <td class="text-center">$${prod.precio}</td>
         <td class="text-center">${prod.stock}</td>
         <td class="text-center">
         <a href="#" class="btn btn-warning" onclick="modificarProd(${prod.codigo})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
@@ -86,7 +84,6 @@ if (user) {
 
     function cargaModalModif() {
         let contenido = "";
-
         contenido = `
         <div class="form-row">
         <div class="form-group col-md-6">
@@ -111,7 +108,7 @@ if (user) {
         </div>
         <div class="form-group col-md-6">
             <label for="inputState">Categoria</label>
-            <select id="inputState" class="form-control">
+            <select id="categoria" class="form-control">
                 <option selected>Ropa Deportiva</option>
                 <option>Fitness y Musculacion</option>
                 <option>Suplementos y Shakers</option>

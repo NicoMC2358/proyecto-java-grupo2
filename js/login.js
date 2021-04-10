@@ -19,7 +19,7 @@ localStorage.setItem('usuario', JSON.stringify(usuario)); // cada vez que se ini
 // usuarios.push(admin1);
 
 
-//localStorage.setItem("usuarios",JSON.stringify(usuarios));
+// localStorage.setItem("usuarios",JSON.stringify(usuarios));
 
 
 function validarMail(input) {
