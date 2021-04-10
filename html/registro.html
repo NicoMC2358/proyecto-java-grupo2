@@ -11,8 +11,8 @@
     <title>Nombre del Gym</title>
 </head>
 
-<body>
-    <header>
+<body class="bg-img">
+    <!-- <header>
         <nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
             <div class="container">
                 <img src="../img/logo/logo.png" alt="Logo del Gimnasio" class="gimnasioLogo mr-2">
@@ -22,7 +22,7 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="../html/main.html">Turnos <span
@@ -43,41 +43,70 @@
                         <button class="btn btn-info my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-shopping-cart pr-2"
                                 aria-hidden="true"></i>0</button>
                     </form>
-                </div> -->
+                </div>
             </div>
         </nav>
-    </header>
+    </header> -->
 
 
     <main>
-        <h2 class="text-center py-4"> Crea tu cuenta </h2>
+        <h2 class="d-flex justify-content-center py-4 tituloLogin"> RITMO LATINO </h2>
         <hr>
         <section>
-            <div class="container">
+            <div class="container bg-form">
                 <div>
-                    <h3 class="text-center">Registrate</h3>
+                    <h3 class="text-center text-dark">Registrate</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-lg-6 ">
-                        <form>
-                            <div class="bg-white my-3">
-
+                        <form id="btnSubmit" onsubmit="validarGeneral(event)">
+                           
+                            <div class=" my-3">
+                                <!-- <div class="form-group">
+                                    <label>Nombre</label>
+                                    <input
+                                    type="text"
+                                    maxlength="30"
+                                    class="form-control"
+                                    id="name"
+                                    autocomplete="off"
+                                    required
+                                  />
+                                            
+                                </div> -->
                                 <div class="form-group">
                                     <label> Tu correo electronico</label>
-                                    <input type="email" required class="form-control" id="email"
-                                        aria-describedby="emailHelp">
+                                    <input type="email" class="form-control" id="email"
+                                        aria-describedby="emailHelp" onblur="validarMail(this)"/>
+                                        <div class="valid-feedback">
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Ingrese un email valido
+                                        </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Contraseña</label>
-                                    <input type="password" required class="form-control" id="password">
+                                    <input type="password" class="form-control" id="password" onblur="validadPassword(this)"/>
+                                    <div class="valid-feedback">
+                                    </div>
+                                    <div class="invalid-feedback">
+                                       Tiene que ingresar una contraseña
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label>Confirmar contraseña</label>
-                                    <input type="password" required class="form-control" id="password1">
+                                    <input type="password" class="form-control" id="password1" onblur="validadPasswordConfirm(this)"/>
+                                    <div class="valid-feedback">
+                                    </div>
+                                    <div class="invalid-feedback">
+                                       Tiene que ingresar una contraseña
+                                    </div>
                                 </div>
-                                <button type="submit"
-                                    class="registrarBoton w-100 px-2 py-1 my-2 d-block text-center">Registrarme</button>
+                                
+                                <button type="submit" class="registrarBoton w-100 px-2 py-1 my-2 d-block text-center">Registrarme</button>
+                                <div id="msjRegistro"></div>
                         </form>
+                     
                         <p class="text-center my-4"> ¿Ya estas registrado? <a href="login.html"
                                 class="red font-weight-bold">Inicia Sesion</a></p>
                     </div>
@@ -91,6 +120,7 @@
                         aria-pressed="true"><i class="fab fa-google"></i>
                         Registrarse con Google</a>
                 </div>
+               
 
             </div>
         </section>
@@ -105,7 +135,7 @@
         crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/823835b326.js"></script>
 
-    <script src="../js/app.js"></script>
+
     
     <!-- EMAIL JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
@@ -114,6 +144,7 @@
 emailjs.init("user_o3QY1JwehbsYLsqDqLPou");
 })();
 </script>
+<script src="../js/registro.js"></script>
 </body>
 
 </html>

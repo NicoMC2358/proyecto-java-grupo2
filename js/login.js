@@ -40,7 +40,7 @@ function validarMail(input) {
 
 
 function validar() {
-    console.log('en funcion validar');
+  //  console.log('en funcion validar');
     let inputEmail = document.querySelector("#email");
     let inputPassword = document.querySelector("#password");
 
