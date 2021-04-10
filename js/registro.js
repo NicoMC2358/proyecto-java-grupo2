@@ -74,7 +74,7 @@ function validarGeneral(event){
     event.preventDefault(); //me detiene el refresco del submit
     let id = idRandom();
     // let usuario = document.querySelector('#user').value;
-    //let nombre = document.querySelector('#name').value;
+    let nombre = document.querySelector('#name').value;
     let email = document.querySelector('#email').value;
     let password = document.querySelector('#password').value;
     let alerta = document.getElementById("msjRegistro");
@@ -89,8 +89,8 @@ function validarGeneral(event){
         if (validar !== undefined) {
             alert('usuario existente');
             document.querySelector('#btnSubmit').reset()
-           document.querySelector('#email').focus();
-            return;
+           
+            return;document.querySelector('#email').focus();
         }
         let newUser = new Usuario(id, email, password);
         console.log(newUser);
@@ -101,15 +101,21 @@ function validarGeneral(event){
         alerta.innerHTML = "Los datos se enviaron correctamente";
         alert('se creo nuevo usuario');
 
-        document.querySelector('#btnSubmit').reset();
-
+        
         
 
 
-        //   mensaje.push(email);
-        //   mensaje.push(password);
+        let mensaje = [nombre,'telefono',email,` Le queremos dar la bienvenida al nuestro gimnasio, para loguearse solo tiene que ingresar a nuestra pagina e ingresar con su email ${email} y su contraseña ${password}`];
 
-        // enviarMailRegistro(mensaje);
+        enviarMailRegistro(mensaje);
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+        document.querySelector('#btnSubmit').reset();
+
+      
+        setTimeout(function () {
+            location.href = "login.html";
+          }, 3000);
 
     } else {
        // console.log("No se envian los datos perrrrro")
@@ -120,3 +126,28 @@ function validarGeneral(event){
     }
 
 }
+
+
+
+  // ===============Email JS===================== 
+  
+  function enviarMailRegistro(array){
+    console.log(array);
+  var templateParamsBienvenido = {
+    from_name:'RITMO LATINO',
+      user_name: array[0],
+      destinatario: array[2],
+      message: array[3]
+  };
+  // console.log(templateParamsConsulta.from_name);
+  // console.log(templateParamsConsulta.user_name);
+  // console.log(templateParamsConsulta.destinatario);
+  // console.log(templateParamsConsulta.message);
+  
+    emailjs.send('service_pru7jpa', 'template_g1qf5so', templateParamsBienvenido)
+      .then(function(response) {
+         console.log('SUCCESS!', response.status, response.text);
+      }, function(error) {
+         console.log('FAILED...', error);
+      });
+    }

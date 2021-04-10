@@ -1,11 +1,11 @@
-// class Usuario {
-//     constructor(id, email, password, activo = true) {
-//       this.id = id;
-//       this.email = email;
-//       this.password = password;
-//       this.activo = activo;
-//     }
-//   }
+class Usuario {
+    constructor(id, email, password, activo = true) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.activo = activo;
+    }
+}
 
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
@@ -19,28 +19,28 @@ localStorage.setItem('usuario', JSON.stringify(usuario)); // cada vez que se ini
 // usuarios.push(admin1);
 
 
-localStorage.setItem("usuarios",JSON.stringify(usuarios));
+//localStorage.setItem("usuarios",JSON.stringify(usuarios));
 
 
 function validarMail(input) {
     console.log("adentro de validar email")
     let expresion = /\w+@\w+\.[a-z]{2,4}$/;
-  
+
     if (input.value != "" && expresion.test(input.value)) {
-  
-     input.className = "form-control is-valid";
-      
-      return true;
+
+        input.className = "form-control is-valid";
+
+        return true;
     } else {
-      input.className = "form-control is-invalid";
-  
-      return false;
+        input.className = "form-control is-invalid";
+
+        return false;
     }
 }
 
 
 function validar() {
-  //  console.log('en funcion validar');
+    //  console.log('en funcion validar');
     let inputEmail = document.querySelector("#email");
     let inputPassword = document.querySelector("#password");
 
@@ -87,71 +87,92 @@ document.querySelector("#btnSubmit").addEventListener("submit", function (event)
 /* ================================================= */
 /* =============Recuperar contrasenia============= */
 /* ================================================= */
-function randomPassword(){
+function randomPassword() {
     return new Date().getTime()
 }
 let formularioRecu = document.querySelector('#recuperarSubmit');
 
-formularioRecu.addEventListener("submit",function(event){
-    event.preventDefault;
+formularioRecu.addEventListener("submit", function (event) {
+    event.preventDefault();
     console.log("adentro de recuperar submit");
-  
-    let email=document.querySelector("#mailRecu").value;
 
-    let validar = usuarios.find(function(user){
-        return user.email===email;
+    let email = document.querySelector("#mailRecu").value;
+
+    let validar = usuarios.find(function (user) {
+        return user.email === email;
     });
-    let index = usuarios.findIndex(function(user){
-        return user.email===email;
+    let index = usuarios.findIndex(function (user) {
+        return user.email === email;
     });
+    let validarAdmin = usuarios.find(function (user) {
+        return user.email === 'ritmolatinogim@gmail.com';
+    })
     console.log("validar", validar);
-    
-    if(validar!== undefined){
-        console.log("encontro un usuario con ese mail");
-        let newPassword=randomPassword();
+    if (validar === validarAdmin) {
+        alert("No puedes cambiar la contrasenia del administrador");
+        document.querySelector('#recuperarSubmit').reset();
+        document.querySelector('#mailRecu').focus();
+    }
+    if (validar !== undefined && validar !== validarAdmin) {
+        // console.log("encontro un usuario con ese mail");
+        let newPassword = randomPassword();
         let emailOG = usuarios[index].email;
-        let idOG=usuarios[index].id;
+        let idOG = usuarios[index].id;
         // que hago con el activo?
-        usuarios.splice(index,2);
-        usuarios.push({
-            id: idOG,
-            email: emailOG,
-            password: newPassword,
-            activo: true
-        });
-        console.log(usuarios);
-        debugger;
-        let mensaje = ['Querido socio','telefono',emailOG,`su nueva contraseña es ${newPassword}`];
-       //enviarMailRecuperacionPassword(mensaje);
-        localStorage.setItem("usuarios",JSON.stringify(usuarios));
+        usuarios.splice(index, 1);
+        // usuarios.push({
+        //     id: idOG,
+        //     email: emailOG,
+        //     password: newPassword,
+        //     activo: true
+        // });
+        //console.log(usuarios);
+        let newUser = new Usuario(idOG, emailOG, newPassword, activo = true);
+        //usuarios.push(newUser);
+        console.log("otra vez");
 
+
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        //console.log(usuarios);
+        let mensaje = ['Querido socio', 'telefono', emailOG, `su nueva contraseña es ${newPassword}`];
+        //enviarMailRecuperacionPassword(mensaje);
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        enviarMailRecuperacionPassword(mensaje);
         
+        alert("Su contraseña fue cambiada con exito, revise su bandeja de entrada");
+        
+       
     } else {
-        console.log("No se encontro ningun usuario con ese mail");
+        if (validar === undefined) { alert("No se encontro ningun usuario con ese mail"); }
+
+        //document.querySelector('#recuperarSubmit').reset();
+        document.querySelector('#mailRecu').focus();
+
 
 
     }
 })
 
- // ===============Email JS===================== 
-  
- function enviarMailRecuperacionPassword(array){
+// ===============Email JS===================== 
 
-     console.log("Entro a mail recuperacion");
-     //debugger;
+
+function enviarMailRecuperacionPassword(array) {
     console.log(array);
-  var templateParamsConsulta = {
-    from_name:'RITMO LATINO',
-      user_name: array[0],
-      destinatario: array[2],
-      message: array[3]
-  };
-  
-    emailjs.send('service_pru7jpa', 'template_ojqof6y', templateParamsConsulta)
-      .then(function(response) {
-          debugger;
-         console.log('SUCCESS!', response.status, response.text);
-      }, function(error) {
-         console.log('FAILED...', error);
-      });
-    }
+    var templateParamsBienvenido = {
+        from_name: 'RITMO LATINO',
+        user_name: array[0],
+        destinatario: array[2],
+        message: array[3]
+    };
+    // console.log(templateParamsConsulta.from_name);
+    // console.log(templateParamsConsulta.user_name);
+    // console.log(templateParamsConsulta.destinatario);
+    // console.log(templateParamsConsulta.message);
+
+    emailjs.send('service_pru7jpa', 'template_g1qf5so', templateParamsBienvenido)
+        .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+            console.log('FAILED...', error);
+        });
+}
