@@ -1,21 +1,25 @@
 class Usuario {
     constructor(id, email, password, activo = true) {
-        this.id = id;
-        this.email = email;
-        this.activo = activo;
+      this.id = id;
+      this.email = email;
+      this.password = password;
+      this.activo = activo;
     }
-}
-let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-//Creamos una funcion que nos permita generar un ID automatico-----------------------------
-function idRandom() {
+  }
 
-    if (usuarios.length > 0) {
-        return usuarios[usuarios.length - 1].id + Math.round(Math.random() * 100);
-        //tambien puedo usar el new Date().getTime() para generar un numero random
-    } else {
-        return Math.round(Math.random() * 100);
-    }
-}
+let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+let usuario = {};
+
+localStorage.setItem('usuario', JSON.stringify(usuario)); // cada vez que se inicie el login, si habia algo en la pantalla del login el usuario desaparece, lo creo de vuelta 
+let admin = new Usuario (9999,"ritmolatinogim@gmail.com","ritmolatino123");
+usuarios.push(admin);
+
+let admin1 = new Usuario (7999,"gabegarcia916@gmail.com","ritmolatino123");
+usuarios.push(admin1);
+
+
+localStorage.setItem("usuarios",JSON.stringify(usuarios));
 
 //-----------------------------
 let formulario = document.querySelector("#btnSubmit");

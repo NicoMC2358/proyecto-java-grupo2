@@ -1,19 +1,26 @@
-class Usuario {
-    constructor(id, email, password, activo = true) {
-      this.id = id;
-      this.email = email;
-      this.password = password;
-      this.activo = activo;
-    }
-  }
+// class Usuario {
+//     constructor(id, email, password, activo = true) {
+//       this.id = id;
+//       this.email = email;
+//       this.password = password;
+//       this.activo = activo;
+//     }
+//   }
 
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-let usuario = {};// es un objeto vacio
+let usuario = {};
+// let usuarioLogueado={};
 localStorage.setItem('usuario', JSON.stringify(usuario)); // cada vez que se inicie el login, si habia algo en la pantalla del login el usuario desaparece, lo creo de vuelta 
-let admin = new Usuario (9999,"ritmolatinogim@gmail.com","ritmolatino123");
-usuarios.push(admin);
-localStorage.setItem("usuarios",JSON.stringify(admin));
+// let admin = new Usuario (9999,"ritmolatinogim@gmail.com","ritmolatino123");
+// usuarios.push(admin);
+
+// let admin1 = new Usuario (7999,"gabegarcia916@gmail.com","ritmolatino123");
+// usuarios.push(admin1);
+
+
+localStorage.setItem("usuarios",JSON.stringify(usuarios));
+
 
 function validarMail(input) {
     console.log("adentro de validar email")
@@ -48,9 +55,9 @@ function validar() {
         if (user.password === inputPassword.value) {
             alert('Estas logueado');
             if (user.id === "9999") {
-                location.href = "productos.html";
+                location.href = "index.html";
             } else {
-                location.href = "main.html";
+                location.href = "index.html";
             }
 
             usuario = {
@@ -84,9 +91,12 @@ function randomPassword(){
     return new Date().getTime()
 }
 let formularioRecu = document.querySelector('#recuperarSubmit');
+
 formularioRecu.addEventListener("submit",function(event){
     event.preventDefault;
-    let email=document.querySelector("mailRecu").value;
+    console.log("adentro de recuperar submit");
+  
+    let email=document.querySelector("#mailRecu").value;
 
     let validar = usuarios.find(function(user){
         return user.email===email;
@@ -94,21 +104,27 @@ formularioRecu.addEventListener("submit",function(event){
     let index = usuarios.findIndex(function(user){
         return user.email===email;
     });
+    console.log("validar", validar);
+    
     if(validar!== undefined){
         console.log("encontro un usuario con ese mail");
         let newPassword=randomPassword();
         let emailOG = usuarios[index].email;
         let idOG=usuarios[index].id;
         // que hago con el activo?
-        usuarios.splice(index,1);
+        usuarios.splice(index,2);
         usuarios.push({
             id: idOG,
             email: emailOG,
             password: newPassword,
             activo: true
         });
-        let mensaje = ['Querido socio','telefono',JSON.stringify(emailOG),`su nueva contraseña es ${newPassword}`];
-        enviarMailRecuperacionPassword(mensaje);
+        console.log(usuarios);
+        debugger;
+        let mensaje = ['Querido socio','telefono',emailOG,`su nueva contraseña es ${newPassword}`];
+       //enviarMailRecuperacionPassword(mensaje);
+        localStorage.setItem("usuarios",JSON.stringify(usuarios));
+
         
     } else {
         console.log("No se encontro ningun usuario con ese mail");
@@ -120,6 +136,9 @@ formularioRecu.addEventListener("submit",function(event){
  // ===============Email JS===================== 
   
  function enviarMailRecuperacionPassword(array){
+
+     console.log("Entro a mail recuperacion");
+     //debugger;
     console.log(array);
   var templateParamsConsulta = {
     from_name:'RITMO LATINO',
@@ -130,6 +149,7 @@ formularioRecu.addEventListener("submit",function(event){
   
     emailjs.send('service_pru7jpa', 'template_ojqof6y', templateParamsConsulta)
       .then(function(response) {
+          debugger;
          console.log('SUCCESS!', response.status, response.text);
       }, function(error) {
          console.log('FAILED...', error);
