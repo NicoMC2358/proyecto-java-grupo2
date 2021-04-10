@@ -50,7 +50,7 @@
         <div class="container" id="contenedor_principal">
             <div class="row">
                 <div class="col">
-                    <h1>Administrador</h1>
+                    <h1>Admin</h1>
                 </div>
             </div>
             <div class="row">
@@ -63,9 +63,9 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">Usuario</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Email</th>
+                                <th scope="col" class="text-center">Usuario</th>
+                                <th scope="col" class="text-center">Nombre</th>
+                                <th scope="col" class="text-center">Email</th>
                                 <th scope="col" class="text-center">Activo</th>
                                 <th></th>
                             </tr>
@@ -74,41 +74,43 @@
                     </table>
                 </div>
             </div>
+
             <div class="row mt-4">
                 <div class="col">
                     <h3>Productos</h3>
                 </div>
                 <div class="col text-right mb-3">
-                    <button class="btn btn-warning" onclick="nuevoProdModal()">Nuevo</button>
+                    <button class="btn btn-warning" onclick="nuevoProducto()">Nuevo Producto</button>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col">
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Categoria</th>
-                                <th scope="col">Precio</th>
+                                <th scope="col" class="text-center">#</th>
+                                <th scope="col" class="text-center">Nombre</th>
+                                <th scope="col" class="text-center">Categoria</th>
+                                <th scope="col" class="text-center">Precio</th>
                                 <th scope="col" class="text-center">Stock</th>
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody id="bodyTable"></tbody>
+                        <tbody id="productTable"></tbody>
                     </table>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal -->
+    <!------------------------------------------------------------- Modal ------------------------------------------------------------->
     <div class="modal fade" id="modificarModal" tabindex="-1" aria-labelledby="modificarModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modificarModalLabel">
-                        Modificar producto
+                        Nuevo Producto
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -117,67 +119,14 @@
                 <form id="formModif">
                     <div class="modal-body" id="bodyModificaModal"></div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                            Close
-                        </button>
-                        <button type="submit" class="btn btn-primary">
-                            Save changes
-                        </button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-success">Agregar Producto</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-    <div class="modal fade" id="nuevoProdModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Producto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputEmail4">Producto</label>
-                                <input type="text" class="form-control" id="inputEmail4">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputPassword4">Precio</label>
-                                <input type="number" class="form-control" id="inputPassword4" placeholder="0">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputAddress">Imagen</label>
-                            <input type="text" class="form-control" id="inputAddress">
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label for="inputCity">Stock</label>
-                                <input type="number" class="form-control" id="inputCity" placeholder="0">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputState">Categoria</label>
-                                <select id="inputState" class="form-control">
-                                    <option selected>Ropa Deportiva</option>
-                                    <option>Fitness y Musculacion</option>
-                                    <option>Suplementos y Shakers</option>
-                                </select>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success">Agregar Producto</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------------------------------->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
