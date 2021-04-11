@@ -20,6 +20,12 @@
     object-fit: contain;
 }
 
+.estilosBorder {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(20, 33, 61, 1.00)
+}
+
 .imagenCarritoMiguel {
     width: 150px;
     object-fit: contain;

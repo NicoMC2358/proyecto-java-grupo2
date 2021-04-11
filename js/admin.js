@@ -64,6 +64,7 @@ if (user.id === 9999) {
             contenido = `
         <th scope="row" class="text-center">${prod.codigo}</th>
         <td class="text-center">${prod.nombre}</td>
+        <td class="text-center">${prod.categoria}</td>
         <td class="text-center">$${prod.precio}</td>
         <td class="text-center">${prod.stock}</td>
         <td class="text-center">
@@ -87,27 +88,27 @@ if (user.id === 9999) {
         contenido = `
         <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputEmail4">Producto</label>
-            <input type="text" class="form-control" id="nombre">
+            <label for="nombre">Producto</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
         </div>
         <div class="form-group col-md-6">
-            <label for="inputPassword4">Precio</label>
+            <label for="precio">Precio</label>
             <input type="number" class="form-control" id="precio" placeholder="0" value="0"
                 min=0 autocomplete='off'>
         </div>
     </div>
     <div class="form-group">
-        <label for="inputAddress">Imagen</label>
-        <input type="text" class="form-control" id="imagen">
+        <label for="imagen">Imagen</label>
+        <input type="text" class="form-control" id="imagen" placeholder="https://...">
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label for="inputCity">Stock</label>
+            <label for="stock">Stock</label>
             <input type="number" class="form-control" id="stock" placeholder="0" value="0" min=0
                 autocomplete='off'>
         </div>
         <div class="form-group col-md-6">
-            <label for="inputState">Categoria</label>
+            <label for="categoria">Categoria</label>
             <select id="categoria" class="form-control">
                 <option selected>Ropa Deportiva</option>
                 <option>Fitness y Musculacion</option>

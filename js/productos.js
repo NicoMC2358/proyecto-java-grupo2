@@ -24,59 +24,6 @@ let contenedor2 = document.querySelector("#suplementosContenedor");
 //Body del modal
 let cuerpoModal = document.querySelector(".modal-body");
 
-function agregarProducto() {
-    let veces = parseInt(prompt("¿Cuantos productos va a ingresar?"));
-
-    if (isNaN(veces) || veces <= 0) {
-        console.error("Debe ingresar un número y que este sea mayor que cero");
-        return;
-    }
-
-    for (let i = 0; i < veces; i++) {
-        let codigo = i + 1;
-        let nombre = prompt(`Ingrese el nombre del producto #${i + 1}`);
-
-        if (nombre === "" || nombre === null || !isNaN(nombre)) {
-            console.error("No se ingreso el dato o se puso un número en el nombre");
-            return;
-        } else {
-            let categoria = prompt(`Ingrese la categoria del producto (Ropa Deportiva, Fitness y Musculacion o Suplementos y Shakers)`);
-
-            if (categoria === "" || categoria === null || !isNaN(categoria)) {
-                console.error("No se ingreso el dato o se puso un número en la categoria");
-                return;
-            } else {
-                let precio = parseFloat(prompt("Ingrese el precio del producto"));
-
-                if (isNaN(precio) || precio <= 0) {
-                    console.error("No se ingresó un número o se canceló");
-                    return;
-                } else {
-                    let stock = parseFloat(prompt("Ingrese el stock del producto"));
-
-                    if (isNaN(stock) || stock <= 0) {
-                        console.error("No se ingresó un número o se canceló");
-                        return;
-                    } else {
-                        let imagen = (prompt("Ingrese el link de la imagen del producto"));
-
-                        if (imagen === "" || imagen === null) {
-                            console.error("No se ingresó el dato o se canceló");
-                            return;
-                        }
-
-                        productos.push(
-                            new Producto(codigo, nombre.toUpperCase(), categoria.toLocaleLowerCase(), precio, stock, imagen)
-                        );
-                    }
-                }
-            }
-        }
-    }
-    localStorage.setItem('productos', JSON.stringify(productos))
-    cargarCard()
-}
-
 function cantidadCarrito() {
     let sumaCantidad = 0;
 
@@ -94,7 +41,7 @@ function cargarCard() {
         let div = document.createElement("div");
         div.classList = "col-12 col-md-6 col-lg-4 test";
         div.innerHTML = `
-        <div class="card border-secondary mb-3">
+        <div class="card mb-3 estilosBorder">
             <img src="${productos[i].imagen}" class="card-img-top-miguel imgCard" alt="${productos[i].nombre}" />
             <div class="card-body">
                 <h4 class="card-title">${productos[i].nombre}</h4>
@@ -108,14 +55,15 @@ function cargarCard() {
             </div>
         </div>
         `;
+
         switch (productos[i].categoria) {
-            case "ropa deportiva":
+            case "Ropa Deportiva":
                 contenedor.appendChild(div);
                 break;
-            case "fitness y musculacion":
+            case "Fitness y Musculacion":
                 contenedor1.appendChild(div);
                 break;
-            case "suplementos y shakers":
+            case "Suplementos y Shakers":
                 contenedor2.appendChild(div);
                 break;
         }
