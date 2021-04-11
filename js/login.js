@@ -19,7 +19,7 @@ localStorage.setItem('usuario', JSON.stringify(usuario)); // cada vez que se ini
 // usuarios.push(admin1);
 
 
-//localStorage.setItem("usuarios",JSON.stringify(usuarios));
+// localStorage.setItem("usuarios",JSON.stringify(usuarios));
 
 
 function validarMail(input) {
@@ -139,7 +139,7 @@ formularioRecu.addEventListener("submit", function (event) {
         usuarios.push(newUser);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
         enviarMailRecuperacionPassword(mensaje);
-        
+
         alert("Su contraseña fue cambiada con exito, revise su bandeja de entrada");
         document.querySelector('#recuperarSubmit').reset();
         setTimeout(function () {
