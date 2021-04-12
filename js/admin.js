@@ -135,7 +135,7 @@ if (user.id === 9999) {
             imagen = "https://bitsofco.de/content/images/2018/12/broken-1.png";
         }
 
-        let newProduct = new Producto(codigo, nombre, categoria, imagen, precio, stock);
+        let newProduct = new Producto(codigo, nombre, categoria, imagen, parseFloat(precio), stock);
         productos.push(newProduct);
         localStorage.setItem("productos", JSON.stringify(productos));
 

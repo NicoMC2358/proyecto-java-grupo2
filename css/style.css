@@ -63,12 +63,12 @@
     padding-top: 50px;
 }
 
-/* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .test {
         min-width: 30%;
     }
 }
+
 /*GABO */
 /* Contacto */
 .imagen1 {
