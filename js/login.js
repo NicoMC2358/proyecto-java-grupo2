@@ -127,21 +127,25 @@ formularioRecu.addEventListener("submit", function (event) {
         //     activo: true
         // });
         //console.log(usuarios);
-        let newUser = new Usuario(idOG, emailOG, newPassword, activo = true);
+        let newUser = new Usuario(idOG, emailOG, JSON.stringify(newPassword), activo = true);
         //usuarios.push(newUser);
         console.log("otra vez");
 
 
-        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+  
         //console.log(usuarios);
         let mensaje = ['Querido socio', 'telefono', emailOG, `su nueva contraseña es ${newPassword}`];
         //enviarMailRecuperacionPassword(mensaje);
+        usuarios.push(newUser);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
         enviarMailRecuperacionPassword(mensaje);
 
         alert("Su contraseña fue cambiada con exito, revise su bandeja de entrada");
-
-
+        document.querySelector('#recuperarSubmit').reset();
+        setTimeout(function () {
+            location.href = "login.html";
+          }, 3000);
+       
     } else {
         if (validar === undefined) { alert("No se encontro ningun usuario con ese mail"); }
 
