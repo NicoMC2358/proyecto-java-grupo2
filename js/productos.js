@@ -39,7 +39,7 @@ function cargarCard() {
     contenedor2.innerHTML = "";
     for (let i = 0; i < productos.length; i++) {
         let div = document.createElement("div");
-        div.classList = "col-12 col-md-6 col-lg-4 test";
+        div.classList = "col-12 col-md-6 col-lg-4 test p-0";
         div.innerHTML = `
         <div class="card mb-3 estilosBorder">
             <img src="${productos[i].imagen}" class="card-img-top-miguel imgCard" alt="${productos[i].nombre}" />
