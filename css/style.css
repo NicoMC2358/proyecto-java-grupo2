@@ -74,9 +74,32 @@ body{
     background-color: rgba(252, 163, 17, 1.00);
 }
 
+
+#button-turnos{
+    min-height: 100px;
+    min-width: 150px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 20px;
+}
+
+@media only screen and (max-device-width: 768px){
+    #Slider{
+        display: none;
+    }
+}
+@media only screen and (min-device-width: 768px){
+    #button-turnos{
+        display: none;
+    }
+}
 /* Fin estilos main */
 
 /* Estilos Turnos */
+
+.turnos-title{
+    font-weight: 700;
+}
 
 .calendar{
     max-height: 90%;
@@ -99,8 +122,12 @@ body{
 
 /* Estilos Error 404 */
 
+#header-404{
+    min-width: 100%;
+}
+
 .body-error404{
-    background-image:  url("/img/error404/pexels-lukas-669584.jpg");
+    background-image:  url("/img/error404/pexels-leon-ardho-1552252.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
@@ -108,7 +135,7 @@ body{
 }
 
 #main-404{
-    display: table;
+    display: flex;
     width: 100%;
     height: 100vh;
     text-align: center;
@@ -117,7 +144,7 @@ body{
 .text-404{
     opacity: 0.3;
     color: whitesmoke;
-    font-size: 20rem;
+    font-size: 12rem;
     font-weight: 900;
     display: inline-block;
     padding-right: 12px;
