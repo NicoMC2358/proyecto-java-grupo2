@@ -20,6 +20,9 @@ body{
 
 /* Estilos main */
 
+.navbar{
+    font-weight: 500;
+}
 
 #carousel .carousel-inner img{
     border-radius: 50px;
@@ -39,16 +42,16 @@ body{
 #footer-main{
     min-height: 500px;
     color: white;
-    background-color: rgba(20, 33, 61, 1.00)   
+    background-color: rgba(20, 33, 61, 1.00) 
 }
 
 #list-qk{
     list-style-type: none;
     text-align: center;
-    font-size: large;
+    font-size: 20px;
 }
 
-.page-footer a:link{
+.page-footer a{
     text-decoration: none;
     color: white;
 
@@ -57,6 +60,11 @@ body{
 .page-footer a:hover{
     text-decoration: none;
     color: rgba(252, 163, 17, 1.00);
+}
+
+.page-footer a:active{
+    text-decoration: none;
+    color: orangered;
 }
 
 .img-pago{
