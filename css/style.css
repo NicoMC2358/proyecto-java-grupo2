@@ -64,7 +64,7 @@
 }
 
 .card-title{
-    height: 112px;
+    min-height: 112px;
 }
 
 @media (min-width: 992px) {
