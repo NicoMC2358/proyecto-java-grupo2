@@ -63,6 +63,10 @@
     padding-top: 50px;
 }
 
+.card-title{
+    height: 112px;
+}
+
 @media (min-width: 992px) {
     .test {
         min-width: 30%;

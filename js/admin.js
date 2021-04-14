@@ -19,6 +19,7 @@ let productos = JSON.parse(localStorage.getItem("productos")) || [];
 let productTable = document.querySelector("#productTable");
 
 let bodyModificaModal = document.querySelector("#bodyModificaModal");
+let nuevo = false;
 
 if (user.id === 9999) {
     function cargarTablaUsuarios() {
@@ -79,45 +80,82 @@ if (user.id === 9999) {
     }
 
     function nuevoProducto() {
+        nuevo = true
         cargaModalModif();
         $("#modificarModal").modal("show");
     }
 
-    function cargaModalModif() {
+    function cargaModalModif(objeto = null) {
         let contenido = "";
-        contenido = `
-        <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="nombre">Producto</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-        </div>
-        <div class="form-group col-md-6">
-            <label for="precio">Precio</label>
-            <input type="number" class="form-control" id="precio" placeholder="0" value="0"
-                min=0 autocomplete='off'>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="imagen">Imagen</label>
-        <input type="text" class="form-control" id="imagen" placeholder="https://...">
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            <label for="stock">Stock</label>
-            <input type="number" class="form-control" id="stock" placeholder="0" value="0" min=0
-                autocomplete='off'>
-        </div>
-        <div class="form-group col-md-6">
-            <label for="categoria">Categoria</label>
-            <select id="categoria" class="form-control">
-                <option selected>Ropa Deportiva</option>
-                <option>Fitness y Musculacion</option>
-                <option>Suplementos y Shakers</option>
-            </select>
-        </div>
-    </div>
-    `;
+        let title = document.querySelector("#modificarModalLabel");
 
+        if (objeto === null) {
+            contenido = `
+            <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nombre">Producto</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="precio">Precio</label>
+                <input type="number" class="form-control" id="precio" placeholder="0" value="0"
+                    min=0 autocomplete='off'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="imagen">Imagen</label>
+            <input type="text" class="form-control" id="imagen" placeholder="https://...">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="stock">Stock</label>
+                <input type="number" class="form-control" id="stock" placeholder="0" value="0" min=0
+                    autocomplete='off'>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" class="form-control">
+                    <option selected>Ropa Deportiva</option>
+                    <option>Fitness y Musculacion</option>
+                    <option>Suplementos y Shakers</option>
+                </select>
+            </div>
+        </div>
+        `;
+            title.innerHTML = "Nuevo producto";
+        } else {
+            contenido = `
+            <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nombre">Producto</label>
+                <input type="text" class="form-control" id="nombre" value="${objeto.nombre}">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="precio">Precio</label>
+                <input type="number" class="form-control" id="precio" value="${objeto.precio}" min=0 autocomplete='off'>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="imagen">Imagen</label>
+            <input type="text" class="form-control" id="imagen" value="${objeto.imagen}>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="stock">Stock</label>
+                <input type="number" class="form-control" id="stock" placeholder="0" value="${objeto.stock}" min=0 autocomplete='off'>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" class="form-control" value="${objeto.categoria}">
+                    <option selected>Ropa Deportiva</option>
+                    <option>Fitness y Musculacion</option>
+                    <option>Suplementos y Shakers</option>
+                </select>
+            </div>
+        </div>
+        `;
+            title.innerHTML = "Modificar producto";
+        }
         bodyModificaModal.innerHTML = contenido;
     }
 
@@ -135,13 +173,47 @@ if (user.id === 9999) {
             imagen = "https://bitsofco.de/content/images/2018/12/broken-1.png";
         }
 
-        let newProduct = new Producto(codigo, nombre, categoria, imagen, parseFloat(precio), stock);
-        productos.push(newProduct);
+        if (nuevo) {
+            let newProduct = new Producto(codigo, nombre, categoria, imagen, parseFloat(precio), stock);
+            productos.push(newProduct);
+        } else {
+            let index = productos.findIndex(function (prod) {
+                return prod.codigo === producto.codigo;
+            });
+            productos[index].nombre = nombre;
+            productos[index].imagen = imagen;
+            productos[index].precio = precio;
+            productos[index].stock = stock;
+        }
         localStorage.setItem("productos", JSON.stringify(productos));
 
         cargarTablaProductos();
         $("#modificarModal").modal("hide");
     });
+
+    function borrarProd(codigo) {
+        let index = productos.findIndex(function (prod) {
+            return prod.codigo === codigo;
+        });
+
+        let validar = confirm(`¿Seguro eliminará ${productos[index].nombre}?`);
+
+        if (validar) {
+            productos.splice(index, 1);
+            localStorage.setItem("productos", JSON.stringify(productos));
+            cargarTablaProductos();
+        }
+    }
+
+    function modificarProd(codigo) {
+        nuevo = false;
+        producto = productos.find(function (prod) {
+            return prod.codigo == codigo;
+        });
+
+        cargaModalModif(producto);
+        $("#modificarModal").modal("show");
+    }
 
     cargarTablaProductos();
     cargarTablaUsuarios();
