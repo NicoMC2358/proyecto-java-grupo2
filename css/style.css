@@ -67,6 +67,21 @@ body{
     color: orangered;
 }
 
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
 .img-pago{
     max-height: 30px;
     border-radius: 10px;
