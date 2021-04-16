@@ -33,7 +33,7 @@ if (user.id === 9999) {
                 <th scope="row" class="text-center">${user.usuario}
                     <td class="text-center">${user.nombre}</td>
                     <td class="text-center">${user.email}</td>
-                    <td class="text-center">${user.activo}</td>     
+                    <td class="text-center pr-3">${user.activo}</td>     
                 </th>
         `;
             } else {
@@ -42,7 +42,7 @@ if (user.id === 9999) {
                     <td class="text-center">${user.nombre}</td>
                     <td class="text-center">${user.email}</td>
                     <td class="text-center">${user.activo}</td>
-                    <td class="text-center"><a href="#" class="boton-${user.activo}" onclick="activarUser(${user.id})"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a></td>
+                    <td class="text-center mr-2 my-1 mx-1"><a href="#" class="boton-${user.activo}" onclick="activarUser(${user.id})"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a></td>
                 </th>
             `;
             }
@@ -71,9 +71,9 @@ if (user.id === 9999) {
             <td class="text-center">${prod.categoria}</td>
             <td class="text-center">$${prod.precio}</td>
             <td class="text-center">${prod.stock}</td>
-            <td class="text-center">
-            <a href="#" class="btn btn-warning" onclick="modificarProd(${prod.codigo})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
-            <a href="#" class="btn btn-danger" onclick="borrarProd(${prod.codigo})"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+            <td class="text-center mr-2">
+            <a href="#" class="btn btn-warning my-1 mx-1" onclick="modificarProd(${prod.codigo})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
+            <a href="#" class="btn btn-danger my-1 mx-1" onclick="borrarProd(${prod.codigo})"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
         </th>
         `;
 
