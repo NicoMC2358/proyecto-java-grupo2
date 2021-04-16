@@ -150,7 +150,7 @@ if (user.id === 9999) {
             <div class="form-group col-md-6">
                 <label for="categoria">Categoria</label>
                 <select id="categoria" class="form-control" value="${objeto.categoria}">
-                    <option selected>Ropa Deportiva</option>
+                    <option>Ropa Deportiva</option>
                     <option>Fitness y Musculacion</option>
                     <option>Suplementos y Shakers</option>
                 </select>
