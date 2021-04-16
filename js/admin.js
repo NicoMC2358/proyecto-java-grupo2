@@ -31,18 +31,18 @@ if (user.id === 9999) {
             if (user.usuario === "admin") {
                 contenido = `
                 <th scope="row" class="text-center">${user.usuario}
-                <td class="text-center">${user.nombre}</td>
-                <td class="text-center">${user.email}</td>
-                <td class="text-center">${user.activo}</td>     
+                    <td class="text-center">${user.nombre}</td>
+                    <td class="text-center">${user.email}</td>
+                    <td class="text-center">${user.activo}</td>     
                 </th>
         `;
             } else {
                 contenido = `
                 <th scope="row" class="text-center">${user.usuario}
-                <td class="text-center">${user.nombre}</td>
-                <td class="text-center">${user.email}</td>
-                <td class="text-center">${user.activo}</td>
-                <td class="text-center"><a href="#" class="boton-${user.activo}" onclick="activarUser(${user.id})"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a></td>
+                    <td class="text-center">${user.nombre}</td>
+                    <td class="text-center">${user.email}</td>
+                    <td class="text-center">${user.activo}</td>
+                    <td class="text-center"><a href="#" class="boton-${user.activo}" onclick="activarUser(${user.id})"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a></td>
                 </th>
             `;
             }
@@ -66,15 +66,15 @@ if (user.id === 9999) {
             let contenido = "";
             let tr = document.createElement("tr");
             contenido = `
-        <th scope="row" class="text-center">${prod.codigo}</th>
-        <td class="text-center">${prod.nombre}</td>
-        <td class="text-center">${prod.categoria}</td>
-        <td class="text-center">$${prod.precio}</td>
-        <td class="text-center">${prod.stock}</td>
-        <td class="text-center">
-        <a href="#" class="btn btn-warning" onclick="modificarProd(${prod.codigo})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
-        <a href="#" class="btn btn-danger" onclick="borrarProd(${prod.codigo})"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-        </td>
+        <th scope="row" class="text-center">${prod.codigo}
+            <td class="text-center">${prod.nombre}</td>
+            <td class="text-center">${prod.categoria}</td>
+            <td class="text-center">$${prod.precio}</td>
+            <td class="text-center">${prod.stock}</td>
+            <td class="text-center">
+            <a href="#" class="btn btn-warning" onclick="modificarProd(${prod.codigo})"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a> 
+            <a href="#" class="btn btn-danger" onclick="borrarProd(${prod.codigo})"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+        </th>
         `;
 
             tr.innerHTML = contenido;
@@ -86,7 +86,7 @@ if (user.id === 9999) {
         nuevo = true
         cargaModalModif();
         $("#modificarModal").modal("show");
-    }
+    };
 
     function cargaModalModif(objeto = null) {
         let contenido = "";
@@ -160,7 +160,7 @@ if (user.id === 9999) {
             title.innerHTML = "Modificar producto";
         }
         bodyModificaModal.innerHTML = contenido;
-    }
+    };
 
     document.querySelector("#formModif").addEventListener("submit", function (event) {
         event.preventDefault();
@@ -207,7 +207,7 @@ if (user.id === 9999) {
             localStorage.setItem("productos", JSON.stringify(productos));
             cargarTablaProductos();
         }
-    }
+    };
 
     function modificarProd(codigo) {
         nuevo = false;
@@ -217,7 +217,7 @@ if (user.id === 9999) {
 
         cargaModalModif(producto);
         $("#modificarModal").modal("show");
-    }
+    };
 
     cargarTablaProductos();
     cargarTablaUsuarios();

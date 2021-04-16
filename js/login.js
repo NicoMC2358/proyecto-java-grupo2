@@ -18,7 +18,6 @@ localStorage.setItem('usuario', JSON.stringify(usuario)); // cada vez que se ini
 // let admin1 = new Usuario (7999,"gabegarcia916@gmail.com","ritmolatino123");
 // usuarios.push(admin1);
 
-
 // localStorage.setItem("usuarios",JSON.stringify(usuarios));
 
 
