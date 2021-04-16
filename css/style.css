@@ -8,17 +8,16 @@
 }
 html {
   height: 100%;
-}
-
-body {
   overflow-x: hidden;
 }
 
-#bg-color {
-  background-color: rgba(229, 229, 229, 1);
-}
 
 /* Estilos main */
+
+#bg-color {
+  background-color: rgba(229, 229, 229, 1);
+  overflow-x: hidden;
+}
 
 .navbar {
   font-weight: 500;
@@ -37,6 +36,15 @@ body {
 
 .img-carousel img {
   filter: blur(100);
+}
+
+.prod-popular{
+  border-radius: 20px;
+}
+
+.prod-popular img{
+  display: flex;
+
 }
 
 #footer-main {
@@ -164,6 +172,10 @@ body {
 /* Fin Estilo Turnos */
 
 /* Estilos Error 404 */
+
+.body-error404{
+  overflow-x: hidden;
+}
 
 #header-404 {
   min-width: 100%;

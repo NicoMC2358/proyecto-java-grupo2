@@ -41,8 +41,6 @@
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
                         <button class="btn btn-warning btn-outline-dark text-white my-2 my-sm-0 mx-1" type="submit">Log In</button>
-                        <button class="btn btn-warning btn-outline-dark text-white my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-shopping-cart pr-2"
-                                aria-hidden="true"></i>0</button>
                     </form>
                 </div>
             </div>
@@ -95,87 +93,129 @@
             <div class="container-fluid">
                 <div class="row justify-content-center">
                     <div class="col text-center">
-                        <h1><a href="turnos.html" id="button-turnos" class="btn btn-lg btn-warning turnos-bnt mt-2 mb-4"><i
-                                    class="fa fa-calendar mt-4" aria-hidden="true"></i> Turnos</a></h1>
+                        <h1><a href="turnos.html" id="button-turnos"
+                                class="btn btn-lg btn-warning turnos-bnt mt-2 mb-4"><i class="fa fa-calendar mt-4"
+                                    aria-hidden="true"></i> Turnos</a></h1>
                     </div>
                 </div>
             </div>
-
             <!-- Fin seccion con el carousel -->
             <!-- Seccion con productos -->
             <section id="productos-main">
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <h1><button type="button" class="btn btn-warning btn-outline-light text-white btn-lg btn-block mb-5">Productos mas
-                                    vendidos</button>
+                            <h1><button type="button" class="btn btn-warning text-white btn-lg btn-block mb-5">Productos
+                                    mas vendidos</button>
                             </h1>
                         </div>
                     </div>
                 </div>
-                <div class="row row-cols-1 row-cols-md-4">
-                    <div class="col">
-                        <div class="card-deck" id="contenedor"></div>
+                <div class="card-deck">
+                    <div class="card prod-popular">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_928636-MLA41941082863_052020-O.webp"
+                            class="img-fluid card-img-top p-3 mb-5" alt="mancuerna">
+                        <div class="card-body">
+                            <h5 class="card-title mb-5">Combo Barra + 2 Mancuernas + 30kg</h5>
+                            <p class="card-text">1 BARRA DE 1,50 MTS + 2 MANCUERNAS + 4 DISCOS 5KG + 4 DISCOS 2,5KG
+                                -DIRECTO DE FABRICA
+                                -EXCELENTE CALIDAD</p>
+                            <a href="productos.html" class="btn btn-success">ver mas</a>
+                        </div>
                     </div>
+                    <div class="card prod-popular mb-2">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_931756-MLA42884873762_072020-O.webp"
+                            class="img-fluid card-img-top p-3 mb-5" alt="botella metalica">
+                        <div class="card-body">
+                            <h5 class="card-title mb-5">Botella Deportiva Waterdog</h5>
+                            <p class="card-text">
+                                BOTELLA DE ALUMINIO ULTRALIVIANA;
+                                recubrimiento POWDER COATED (GM).
+                                Fácil de llenar.
+                                Ideal para agua fría y bebidas deportivas.
+                            </p>
+                            <p>Capacidad: 750 ml</p>
+                            <p>Medida: 27 x 6,5 cm</p>
+                            <p>Peso: 135 g</p>
+                            <a href="productos.html" class="btn btn-success">ver mas</a>
+                        </div>
+                    </div>
+                    <div class="card prod-popular">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_731972-MLA43954973750_102020-O.webp"
+                            class="img-fluid card-img-top p-3 mb-5 " alt="shorts deportivos">
+                        <div class="card-body">
+                            <h5 class="card-title mb-5">Shorts De Hombre Deportivos</h5>
+                            <p class="card-text">Confeccionadas con algodón de primera calidad, 24-1 peinado.
+                                Ideales para uso diario y para realizar cualquier tipo de actividad deportiva
+                                Excelentes terminaciones.
+                                Ideales para media estación.
+                                Viene con bolsillos laterales (no tiene bolsillo atras)
+                                Cordon ajustable para adaptarlo como mas te guste.</p>
+                            <a href="productos.html" class="btn btn-success">ver mas</a>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- Fin seccion productos -->
         </div>
     </main>
     <!-- Fin de Main -->
     <!-- Inicio de Footer -->
-    <footer id="footer-main" class="page-footer pt-4">
-        <div class="container mt-5"></div>
-            <div class="row">
-                <div class="col-lg-4 text-center pr-0">
-                    <h4 class="titulo-footer mb-5">Quick Links</h4>
-                    <ul id="list-qk" class="nav flex-column mt-4">
-                        <li class="mb-2"><a href="main.html">Home</a></li>
-                        <li class="mb-2"><a href="turnos.html">Turnos</a></li>
-                        <li class="mb-2"><a href="productos.html">Productos</a></li>
-                        <li class="mb-5"><a href="contacto.html">Contacto</a></li>
-                    </ul>
+    <footer id="footer-main" class="page-footer pt-4 mt-3">
+        <div class="container-fluid mt-5"></div>
+        <div class="row">
+            <div class="col-lg-4 text-center pr-0">
+                <h4 class="titulo-footer mb-5">Quick Links</h4>
+                <ul id="list-qk" class="nav flex-column mt-4">
+                    <li class="mb-2"><a href="main.html">Home</a></li>
+                    <li class="mb-2"><a href="turnos.html">Turnos</a></li>
+                    <li class="mb-2"><a href="productos.html">Productos</a></li>
+                    <li class="mb-5"><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 text-center border-div mb-5 pr-0">
+                <h4 class="titulo-footer">Contactanos</h4>
+                <div class="row justify-content-center">
+                    <iframe id="map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.102220299916!2d-65.2093904851186!3d-26.836700883160397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1sen!2sar!4v1617991467794!5m2!1sen!2sar"
+                        width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        class="map"></iframe>
                 </div>
-                <div class="col-lg-4 text-center border-div mb-5 pr-sm-0">
-                    <h4 class="titulo-footer">Contactanos</h4>
-                    <div class="row justify-content-center">
-                        <iframe
-                            id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.102220299916!2d-65.2093904851186!3d-26.836700883160397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1sen!2sar!4v1617991467794!5m2!1sen!2sar"
-                            width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-                            class="map"></iframe>
+                <div class="row justify-content-center mt-4">
+                    <div class="col">
+                        <i class="fa fa-phone-square fa-2x mr-4" aria-hidden="true"></i>+543816987541
                     </div>
-                    <div class="row justify-content-center mt-4">
-                        <div class="col">
-                            <i class="fa fa-phone-square fa-2x mr-4" aria-hidden="true"></i>+543816987541
-                        </div>
-                    </div>
-
-                    <div class="row justify-content-center pt-2">
-                        <div class="col">
-                            <i class="fa fa-envelope fa-2x mr-4" aria-hidden="true"></i>ritmolatinogim@gmail.com
-                        </div>
-
-                    </div>
-
                 </div>
-                <div class="col-lg-4 text-center mb-4 pr-sm-0">
-                    <h4 class="mb-5 titulo-footer">Siguenos en nuestras redes sociales</h4>
-                    <i class="fa fa-facebook-square fa-3x mr-4" aria-hidden="true"></i>
-                    <i class="fa fa-twitter-square fa-3x mr-4" aria-hidden="true"></i>
-                    <i class="fa fa-instagram fa-3x mr-4" aria-hidden="true"></i>
-                    <h4 class="mt-5 titulo-footer">Nuestros metodos de pagos</h4>
-                    <div class="col m-sm-0 p-sm-0">
-                        <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png" alt="Visa" class="my-4 m-1 m-sm-0 img-pago">
-                        <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png" alt="Matercard" class="my-4 m-1 m-sm-0  img-pago">
-                        <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png" alt="American Express" class="my-4 m-1 m-sm-0  img-pago">
-                        <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png" alt="Mercado Pago" class="my-4 m-1 m-sm-0  img-pago">
-                        <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png" alt="Pago Facil" class="my-4 m-1 m-sm-0  img-pago">
-                        <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png" alt="Rapipago" class="my-4 m- m-sm-0 img-pago">
+                <div class="row justify-content-center pt-2">
+                    <div class="col">
+                        <i class="fa fa-envelope fa-2x mr-4" aria-hidden="true"></i>ritmolatinogim@gmail.com
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4 text-center mb-4 pr-0">
+                <h4 class="mb-5 titulo-footer">Siguenos en nuestras redes sociales</h4>
+                <i class="fa fa-facebook-square fa-3x mr-4" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square fa-3x mr-4" aria-hidden="true"></i>
+                <i class="fa fa-instagram fa-3x mr-4" aria-hidden="true"></i>
+                <h4 class="mt-5 titulo-footer">Nuestros metodos de pagos</h4>
+                <div class="col m-sm-0 pr-0">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"
+                        alt="Visa" class="my-4 m-lg-1 m-sm-0 img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"
+                        alt="Matercard" class="my-4 m-lg-1 m-sm-0  img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"
+                        alt="American Express" class="my-4 m-lg-1 m-sm-0  img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"
+                        alt="Mercado Pago" class="my-4 m-lg-1 m-sm-0  img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png"
+                        alt="Pago Facil" class="my-4 m-lg-1 m-sm-0  img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"
+                        alt="Rapipago" class="my-4 img-pago">
+                </div>
+            </div>
+        </div>
         </div>
     </footer>
-
     <footer id="footer-copyright">
         <div class="container">
             <div class="d-flex justify-content-around">
@@ -186,30 +226,6 @@
         </div>
     </footer>
     <!-- Fin de Footer -->
-
-    <!-- Modal Carrito -->
-        <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modal-carrito" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal-carrito">
-                        Carrito de productos
-                    </h5>
-                    <button type="button" class="close estiloBotonoesMiguel" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">...</div>
-                <div class="modal-footer">
-                    <span>Total: </span><span id="totalCarrito"> </span>
-                    <button type="button" class="btn btn-success estiloBotonoesMiguel" data-dismiss="modal">
-                        Comprar
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Fin modal carrito -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -218,4 +234,5 @@
         crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/823835b326.js"></script>
 </body>
+
 </html>
