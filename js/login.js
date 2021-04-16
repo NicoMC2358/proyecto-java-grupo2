@@ -57,7 +57,7 @@ function validar() {
             if (JSON.stringify(user.id) === "9999") {
                 location.href = "admin.html";
             } else {
-                location.href = "productos.html";
+                location.href = "main.html";
             }
 
             usuario = {
