@@ -1,188 +1,212 @@
 .gimnasioLogo {
-    width: 45px;
-    height: 35px;
+  width: 45px;
+  height: 35px;
 }
 
-*{
-    font-family: 'Noto Sans', sans-serif;
+* {
+  font-family: "Noto Sans", sans-serif;
 }
 html {
-    height: 100%;
+  height: 100%;
 }
 
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
 
-#bg-color{
-    background-color: rgba(229, 229, 229, 1.00);
+#bg-color {
+  background-color: rgba(229, 229, 229, 1);
 }
 
 /* Estilos main */
 
-.navbar{
-    font-weight: 500;
+.navbar {
+  font-weight: 500;
 }
 
-#carousel .carousel-inner img{
-    border-radius: 50px;
-    max-height: 70vh;
-    object-fit: cover;
-    filter: grayscale(70%);
+#carousel .carousel-inner img {
+  border-radius: 50px;
+  max-height: 70vh;
+  object-fit: cover;
+  filter: grayscale(70%);
 }
 
-.turnos-bnt{
-    color: white;
+.turnos-bnt {
+  color: white;
 }
 
-.img-carousel img{
-    filter: blur(100);
+.img-carousel img {
+  filter: blur(100);
 }
 
-#footer-main{
-    min-height: 500px;
-    color: white;
-    background-color: rgba(20, 33, 61, 1.00) 
+#footer-main {
+  min-height: 500px;
+  color: white;
+  background-color: rgba(20, 33, 61, 1);
 }
 
-#list-qk{
-    list-style-type: none;
-    text-align: center;
-    font-size: 20px;
+#list-qk {
+  list-style-type: none;
+  text-align: center;
+  font-size: 20px;
 }
 
-.page-footer a{
-    text-decoration: none;
-    color: white;
-
+.page-footer a {
+  text-decoration: none;
+  color: white;
 }
 
-.page-footer a:hover{
-    text-decoration: none;
-    color: rgba(252, 163, 17, 1.00);
+.page-footer a:hover {
+  text-decoration: none;
+  color: rgba(252, 163, 17, 1);
 }
 
-.page-footer a:active{
-    text-decoration: none;
-    color: orangered;
+.page-footer a:active {
+  text-decoration: none;
+  color: orangered;
 }
 
-.map-responsive{
-    overflow:hidden;
-    padding-bottom:56.25%;
-    position:relative;
-    height:0;
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 
-.map-responsive iframe{
-    left:0;
-    top:0;
-    height:100%;
-    width:100%;
-    position:absolute;
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
-.img-pago{
-    max-height: 30px;
-    border-radius: 10px;
+.img-pago {
+  max-height: 30px;
+  border-radius: 10px;
 }
 
-.map{
-    border-radius: 20px;
+.map {
+  border-radius: 20px;
 }
 
-#footer-copyright{
-    color: white;
-    padding-top: 20px;
-    background-color: rgba(252, 163, 17, 1.00);
+#footer-copyright {
+  color: white;
+  padding-top: 20px;
+  background-color: rgba(252, 163, 17, 1);
 }
 
-
-#button-turnos{
-    min-height: 100px;
-    min-width: 150px;
-    text-align: center;
-    font-size: 30px;
-    border-radius: 20px;
+#button-turnos {
+  min-height: 100px;
+  min-width: 150px;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 20px;
 }
 
-@media only screen and (max-device-width: 768px){
-    #Slider{
-        display: none;
-    }
+@media only screen and (max-device-width: 768px) {
+  #map {
+    display: none;
+  }
 }
-@media only screen and (min-device-width: 768px){
-    #button-turnos{
-        display: none;
-    }
+
+@media (min-width: 601px) {
+  #sm-bg {
+    background: url("../img/smallBackgound/") repeat-x;
+  }
+}
+
+@media (max-width: 768px) {
+  #sm-bg {
+    background: url("../img/smallBackgound/sm-bg.jpg") repeat-x;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-device-width: 768px) {
+  #Slider {
+    display: none;
+  }
+}
+@media only screen and (min-device-width: 768px) {
+  #button-turnos {
+    display: none;
+  }
 }
 /* Fin estilos main */
 
 /* Estilos Turnos */
 
-.turnos-title{
-    font-weight: 700;
+.turnos-title {
+  font-weight: 700;
 }
 
-.calendar{
-    max-height: 90%;
-    max-width: 90%;
+.calendar {
+  max-height: 90%;
+  max-width: 90%;
 }
 
-.list-semana{
-    background-color: rgba(20, 33, 61, 1.00)  
+.list-semana {
+  background-color: rgba(20, 33, 61, 1);
 }
 
-.bg-calendar-nextmonth{
-    background-color: beige;
+.bg-calendar-nextmonth {
+  background-color: beige;
 }
 
-.bg-calendar{
-    background-color: white;
+.bg-calendar {
+  background-color: white;
 }
 
 /* Fin Estilo Turnos */
 
 /* Estilos Error 404 */
 
-#header-404{
-    min-width: 100%;
+#header-404 {
+  min-width: 100%;
 }
 
-.body-error404{
-    background-image:  url("/img/error404/pexels-leon-ardho-1552252.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;  
-    background-size: cover;
-    margin: 0;
+.body-error404 {
+  background-image: url("/img/error404/pexels-leon-ardho-1552252.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
 }
 
-#main-404{
-    display: flex;
-    width: 100%;
-    height: 100vh;
-    text-align: center;
+#main-404 {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
 }
 
-.text-404{
-    opacity: 0.3;
-    color: whitesmoke;
-    font-size: 12rem;
-    font-weight: 900;
-    display: inline-block;
-    padding-right: 12px;
-    animation: type 0.6s alternate infinite;
-    max-height: 350px;
+.text-404 {
+  opacity: 0.3;
+  color: whitesmoke;
+  font-size: 12rem;
+  font-weight: 900;
+  display: inline-block;
+  padding-right: 12px;
+  animation: type 0.6s alternate infinite;
+  max-height: 350px;
 }
 
-.text-description-404{
-    color: whitesmoke;
-    font-size: 48px;
-    font-weight: 700;
+.text-description-404 {
+  color: whitesmoke;
+  font-size: 48px;
+  font-weight: 700;
 }
 
-@keyframes type{
-    from{box-shadow: inset -10px 0px 0px whitesmoke;}
-    to{box-shadow: inset -10px 0px 0px transparent;}
+@keyframes type {
+  from {
+    box-shadow: inset -10px 0px 0px whitesmoke;
+  }
+  to {
+    box-shadow: inset -10px 0px 0px transparent;
+  }
 }
 /* Fin estilos Error 404 */

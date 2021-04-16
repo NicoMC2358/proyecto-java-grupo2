@@ -32,10 +32,10 @@ let cuerpoModal = document.querySelector(".modal-body");
 // let prod3 = new Producto(3,"Teclado mecánico",4800,2,"https://d2r9epyceweg5n.cloudfront.net/stores/911/585/products/philips-teclado-g605-11-48b5b57b29daafb8a116019913576074-1024-1024.jpg")
 
 //Agregar los productos al arreglo
-// productos.push(prod1,prod2,prod3)
+productos.push(prod1,prod2,prod3)
 
 //Guardar en localStorage
-// localStorage.setItem('productos',JSON.stringify(productos))
+localStorage.setItem('productos',JSON.stringify(productos))
 function cantidadCarrito() {
     let sumaCantidad = 0;
 
@@ -49,22 +49,22 @@ function cargarCard() {
     contenedor.innerHTML = "";
     for (let i = 0; i < productos.length; i++) {
         let div = document.createElement("div");
-        div.classList = "col col-md-6 col-lg";
+        div.classList = "col-12 col-md-6 col-lg-4 test p-0";
         div.innerHTML = `
-      <div class="card">
-                <img src="${productos[i].imagen}" class="card-img-top imgCard" alt="${productos[i].nombre}" />
-                <div class="card-body">
-                  <h5 class="card-title">${productos[i].nombre}</h5>
-                  <p class="card-text">
-                    Stock: ${productos[i].stock}
-                  </p>
-                </div>
-                <div class="card-footer">
+        <div class="card mb-3 estilosBorder">
+            <img src="${productos[i].imagen}" class="card-img-top-miguel imgCard" alt="${productos[i].nombre}" />
+            <div class="card-body">
+                <h4 class="card-title">${productos[i].nombre}</h4>
+                <hr>
+                <p class="card-categoria">${productos[i].categoria}</p>
+                <p class="card-text">Stock: ${productos[i].stock}</p>
+            </div>
+            <div class="card-footer text-center">
                 <p class="card-text">Precio: $${productos[i].precio}</p>
                 <a href="#" class="btn btn-success" onclick="agregarCarrito(${productos[i].codigo})">Carrito</a>
-                </div>
-              </div>
-      `;
+            </div>
+        </div>
+        `;
         contenedor.appendChild(div);
     }
 }
@@ -126,21 +126,23 @@ function cargarModal() {
 
     carrito.forEach(function (prod) {
         let div = document.createElement("div");
-        div.classList = "card mb-2";
+        div.classList = "card mb-3";
         let detalle = `
-  <div class="row no-gutters">
-      <div class="col-md-4">
-        <img class="imagenCarrito" src="${prod.imagen}" alt="${prod.nombre}">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">${prod.cantidad} ${prod.nombre}</h5>
-          <p class="card-text">Precio: $${prod.precio}</p>
-          <a href="#" class="btn btn-danger">Eliminar</a>
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img class="imagenCarritoMiguel" src="${prod.imagen}" alt="${prod.nombre}">
+                </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                <h4 class="card-title">${prod.cantidad} ${prod.nombre}</h4>
+                <hr>
+                <p class="card-categoria">${prod.categoria}</p>
+                <p class="card-text">Precio: $${prod.precio}</p>
+                <a href="#" class="btn btn-danger" onclick="eliminarProdCarrito(${prod.id})">Eliminar</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  `;
+    `;
         div.innerHTML = detalle;
         cuerpoModal.appendChild(div);
         sumaCarrito += prod.precio;
@@ -157,6 +159,28 @@ mostrarModal()
 function verCarrito() {
     cargarModal();
     $("#modalCarrito").modal("show");
+}
+
+function eliminarProdCarrito(id) {
+    let index = carrito.findIndex(function (prod) {
+        return prod.id === id;
+    });
+
+    let cantidad = carrito[index].cantidad;
+
+    carrito.splice(index, 1);
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+    let indexProd = productos.findIndex(function (prod) {
+        return prod.codigo === id;
+    });
+
+    productos[indexProd].stock += cantidad;
+    localStorage.setItem("productos", JSON.stringify(productos));
+
+    cargarCard();
+    cargarModal();
+    cantidadCarrito();
 }
 
 cargarCard();

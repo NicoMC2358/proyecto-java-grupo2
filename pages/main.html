@@ -17,7 +17,7 @@
 <body id="bg-color">
     <!-- Inicio de Header -->
     <header>
-        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark nav-item-main mb-3">
+        <nav class="navbar navbar-expand-lg  navbar-dark bg-dark nav-item-main mb-sm-0 mb-md-3 mb-lg-3">
             <div class="container">
                 <a class="navbar-brand" href="main.html"><img src="../img/logo/logo.png" alt="Logo del Gimnasio"
                         class="gimnasioLogo mr-2">Ritmo Latino</a>
@@ -51,7 +51,7 @@
     <!-- Fin de Header -->
     <!-- Inicio de Main -->
     <main>
-        <div class="container-fluid">
+        <div id="sm-bg" class="container-fluid">
             <!-- Seccion con carousel -->
             <section id="carousel" class="mb-3">
                 <div class="row justify-content-center">
@@ -126,7 +126,7 @@
     <footer id="footer-main" class="page-footer pt-4">
         <div class="container mt-5"></div>
             <div class="row">
-                <div class="col text-center">
+                <div class="col-lg-4 text-center pr-0">
                     <h4 class="titulo-footer mb-5">Quick Links</h4>
                     <ul id="list-qk" class="nav flex-column mt-4">
                         <li class="mb-2"><a href="main.html">Home</a></li>
@@ -135,26 +135,29 @@
                         <li class="mb-5"><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
-                <div class="col text-center border-div mb-5">
+                <div class="col-lg-4 text-center border-div mb-5 pr-sm-0">
                     <h4 class="titulo-footer">Contactanos</h4>
                     <div class="row justify-content-center">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.102220299916!2d-65.2093904851186!3d-26.836700883160397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1sen!2sar!4v1617991467794!5m2!1sen!2sar"
+                            id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.102220299916!2d-65.2093904851186!3d-26.836700883160397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1sen!2sar!4v1617991467794!5m2!1sen!2sar"
                             width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
                             class="map"></iframe>
                     </div>
                     <div class="row justify-content-center mt-4">
-                        <i class="fa fa-phone-square fa-2x mr-4" aria-hidden="true"></i>
-                        <p class="contact-p">+543816987541</p>
+                        <div class="col">
+                            <i class="fa fa-phone-square fa-2x mr-4" aria-hidden="true"></i>+543816987541
+                        </div>
                     </div>
 
                     <div class="row justify-content-center pt-2">
-                        <i class="fa fa-envelope fa-2x mr-4" aria-hidden="true"></i>
-                        <p class="">ritmolatinogim@gmail.com</p>
+                        <div class="col">
+                            <i class="fa fa-envelope fa-2x mr-4" aria-hidden="true"></i>ritmolatinogim@gmail.com
+                        </div>
+
                     </div>
 
                 </div>
-                <div class="col text-center mb-4 p-0">
+                <div class="col-lg-4 text-center mb-4 pr-sm-0">
                     <h4 class="mb-5 titulo-footer">Siguenos en nuestras redes sociales</h4>
                     <i class="fa fa-facebook-square fa-3x mr-4" aria-hidden="true"></i>
                     <i class="fa fa-twitter-square fa-3x mr-4" aria-hidden="true"></i>
@@ -166,7 +169,7 @@
                         <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png" alt="American Express" class="my-4 m-1 m-sm-0  img-pago">
                         <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png" alt="Mercado Pago" class="my-4 m-1 m-sm-0  img-pago">
                         <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png" alt="Pago Facil" class="my-4 m-1 m-sm-0  img-pago">
-                        <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png" alt="Rapipago" class="my-4 m-1 m-sm-0 img-pago">
+                        <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png" alt="Rapipago" class="my-4 m- m-sm-0 img-pago">
                     </div>
                 </div>
             </div>
@@ -183,6 +186,30 @@
         </div>
     </footer>
     <!-- Fin de Footer -->
+
+    <!-- Modal Carrito -->
+        <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modal-carrito" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-carrito">
+                        Carrito de productos
+                    </h5>
+                    <button type="button" class="close estiloBotonoesMiguel" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">...</div>
+                <div class="modal-footer">
+                    <span>Total: </span><span id="totalCarrito"> </span>
+                    <button type="button" class="btn btn-success estiloBotonoesMiguel" data-dismiss="modal">
+                        Comprar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin modal carrito -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
