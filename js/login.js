@@ -131,7 +131,7 @@ formularioRecu.addEventListener("submit", function (event) {
         console.log("otra vez");
 
 
-  
+
         //console.log(usuarios);
         let mensaje = ['Querido socio', 'telefono', emailOG, `su nueva contraseña es ${newPassword}`];
         //enviarMailRecuperacionPassword(mensaje);
@@ -143,8 +143,8 @@ formularioRecu.addEventListener("submit", function (event) {
         document.querySelector('#recuperarSubmit').reset();
         setTimeout(function () {
             location.href = "login.html";
-          }, 3000);
-       
+        }, 3000);
+
     } else {
         if (validar === undefined) { alert("No se encontro ningun usuario con ese mail"); }
 
