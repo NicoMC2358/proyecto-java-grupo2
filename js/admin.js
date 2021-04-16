@@ -234,3 +234,6 @@ if (user.id === 9999) {
     </div>`;
     contenedor_principal.innerHTML = contenido;
 }
+function logOut(){
+    
+}
