@@ -53,10 +53,11 @@ function validar() {
 
         if (user.password === inputPassword.value) {
             alert('Estas logueado');
-            if (user.id === "9999") {
-                location.href = "index.html";
+            console.log(user.id)
+            if (JSON.stringify(user.id) === "9999") {
+                location.href = "admin.html";
             } else {
-                location.href = "index.html";
+                location.href = "main.html";
             }
 
             usuario = {
@@ -64,7 +65,7 @@ function validar() {
                 email: user.email
             }
             localStorage.setItem('usuario', JSON.stringify(usuario));
-            location.href = 'productos.html';
+            //location.href = 'productos.html';
         } else {
             alert('Usuario o contrania incorrecta ')
         }

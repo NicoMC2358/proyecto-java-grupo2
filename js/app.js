@@ -49,13 +49,6 @@ function validarCantidadCaracteres(input) {
   }
 }
 
-//agregar eventos desde js
-let checkbox = document.getElementById('checkTermino');
-// checkbox.addEventListener('change', function (){
-//     //esto es una funcion anonima, funciona solo aqui no la puedo llamar desde otro lugar
-// })
-
-checkbox.addEventListener('change', validarCheck);
 
 function validarCheck() {
   console.log(checkbox.checked)
