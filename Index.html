@@ -25,17 +25,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="./html/main.html">Turnos <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="./html/main.html">Turnos <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="./html/productos.html">Productos <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="./html/productos.html">Productos <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="./html/contacto.html">Contacto <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="./html/contacto.html">Contacto <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
-                        <button class="btn btn-info my-2 my-sm-0 mx-1" type="submit">Log In</button>
+                        <a class="btn btn-info my-2 my-sm-0 mx-1" href="../html/login.html">Log In</a>
                         <button class="btn btn-info my-2 my-sm-0 mx-1" type="submit"><i class="fa fa-shopping-cart pr-2"
                                 aria-hidden="true"></i>0</button>
                     </form>
@@ -43,6 +46,14 @@
             </div>
         </nav>
     </header>
+
+    <main>
+        ...
+    </main>
+
+    <footer>
+        ...
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -52,6 +63,14 @@
         crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/823835b326.js"></script>
     <script src="./js/app.js"></script>
+
+    <!-- EMAIL JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_o3QY1JwehbsYLsqDqLPou");
+        })();
+    </script>
 
 </body>
 

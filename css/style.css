@@ -1,10 +1,17 @@
+/* *{
+    font-family: 'Noto Sans', sans-serif;
+} */
+
 .gimnasioLogo {
   width: 45px;
   height: 35px;
 }
 
-* {
-  font-family: "Noto Sans", sans-serif;
+/* Estilos Seccion Productos */
+.card-img-miguel {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
 }
 html {
   height: 100%;
@@ -12,213 +19,248 @@ html {
 }
 
 
+.card-img-top-miguel {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+}
+
+.estilosBorder {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(20, 33, 61, 1.00)
+}
+
+.imagenCarritoMiguel {
+    width: 150px;
+    object-fit: contain;
+}
+
 /* Estilos main */
-
-#bg-color {
-  background-color: rgba(229, 229, 229, 1);
-  overflow-x: hidden;
-}
-
-.navbar {
-  font-weight: 500;
-}
-
 #carousel .carousel-inner img {
-  border-radius: 50px;
-  max-height: 70vh;
-  object-fit: cover;
-  filter: grayscale(70%);
+    border-radius: 50px;
+    max-height: 70vh;
+    object-fit: cover;
 }
 
-.turnos-bnt {
-  color: white;
+#carousel {
+    margin-bottom: 20px;
 }
 
-.img-carousel img {
-  filter: blur(100);
-}
-
-.prod-popular{
-  border-radius: 20px;
-}
-
-.prod-popular img{
-  display: flex;
-
+#productos-main {
+    margin-bottom: 20px;
 }
 
 #footer-main {
-  min-height: 500px;
-  color: white;
-  background-color: rgba(20, 33, 61, 1);
+    min-height: 150px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgba(20, 33, 61, 1);
 }
 
-#list-qk {
-  list-style-type: none;
-  text-align: center;
-  font-size: 20px;
+#list-info-main {
+    padding-top: 20px;
+    color: white;
+    list-style-type: none;
 }
 
-.page-footer a {
-  text-decoration: none;
-  color: white;
+.button-contacto-main {
+    padding-top: 50px;
 }
 
-.page-footer a:hover {
-  text-decoration: none;
-  color: rgba(252, 163, 17, 1);
+.card-title{
+    min-height: 112px;
 }
 
-.page-footer a:active {
-  text-decoration: none;
-  color: orangered;
+@media (min-width: 992px) {
+    .test {
+        min-width: 30%;
+    }
 }
 
-.map-responsive {
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  height: 0;
+/*GABO */
+/* Contacto */
+.imagen1 {
+    max-height: 300px;
+    width: 100%;
 }
-
-.map-responsive iframe {
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-}
-
-.img-pago {
-  max-height: 30px;
-  border-radius: 10px;
-}
-
-.map {
-  border-radius: 20px;
-}
-
-#footer-copyright {
-  color: white;
-  padding-top: 20px;
-  background-color: rgba(252, 163, 17, 1);
-}
-
-#button-turnos {
-  min-height: 100px;
-  min-width: 150px;
-  text-align: center;
-  font-size: 30px;
-  border-radius: 20px;
-}
-
-@media only screen and (max-device-width: 768px) {
-  #map {
-    display: none;
-  }
-}
-
-@media (min-width: 601px) {
-  #sm-bg {
-    background: url("../img/smallBackgound/") repeat-x;
-  }
-}
-
-@media (max-width: 768px) {
-  #sm-bg {
-    background: url("../img/smallBackgound/sm-bg.jpg") repeat-x;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+.bodyContacto {
+    margin: 0%;
+    background-image: url(https://images.unsplash.com/photo-1544033527-b192daee1f5b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80);
+    min-height: 380px;
+    background-position: center;
+    background-repeat: repeat;
     background-size: cover;
-    margin: 0;
-  }
+    position: relative;
+}
+.emailInput {
+    text-decoration: none;
+    border: solid 1px #707070;
+    border-radius: 10px;
+    color: white;
+    background: rgba(252, 163, 17, 1);
+    opacity: 0.6;
+}
+.emailInput:hover {
+    opacity: 1;
 }
 
-@media only screen and (max-device-width: 768px) {
-  #Slider {
-    display: none;
-  }
-}
-@media only screen and (min-device-width: 768px) {
-  #button-turnos {
-    display: none;
-  }
-}
-/* Fin estilos main */
-
-/* Estilos Turnos */
-
-.turnos-title {
-  font-weight: 700;
+.registrarBoton {
+    text-decoration: none;
+    border: solid 1px #707070;
+    border-radius: 10px;
+    color: white;
+    background: rgba(252, 163, 17, 1);
 }
 
-.calendar {
-  max-height: 90%;
-  max-width: 90%;
+.botonfacebook {
+    text-decoration: none;
+    border: solid 1px #707070;
+    border-radius: 10px;
+    color: #707070;
+}
+.botonfacebook:hover {
+    text-decoration: none;
+    color: white;
+    background: #4072fa;
+}
+.login {
+    margin: 20px;
+    padding: 16px;
+    right: 150px;
 }
 
-.list-semana {
-  background-color: rgba(20, 33, 61, 1);
+/* Seccion login */
+
+.bg-img {
+    /* The image used */
+    background-image: url("https://images.pexels.com/photos/4162449/pexels-photo-4162449.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+
+    /* Control the height of the image */
+    min-height: 380px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    position: relative;
 }
 
-.bg-calendar-nextmonth {
-  background-color: beige;
+/* Full-width input fields */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
 }
 
-.bg-calendar {
-  background-color: white;
+input[type="text"]:focus,
+input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
 }
 
-/* Fin Estilo Turnos */
-
-/* Estilos Error 404 */
-
-.body-error404{
-  overflow-x: hidden;
+/* Titulo login */
+@font-face {
+    font-family: "ubuntu";
+    font-style: italic;
+    font-weight: 300;
+    src: local("Lato Light Italic"), local("Lato-LightItalic"),
+        url(https://fonts.gstatic.com/s/ubuntucondensed/v8/u-4k0rCzjgs5J7oXnJcM_0kACGMtT-Dfqw.woff2) format("woff2");
 }
 
-#header-404 {
-  min-width: 100%;
+a {
+    text-decoration: none;
+    color: #9ca0b1;
 }
 
-.body-error404 {
-  background-image: url("/img/error404/pexels-leon-ardho-1552252.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  margin: 0;
+.tituloLogin {
+    text-align: center;
+
+    color: #fff;
+    font-size: 92px;
+    font-family: "ubuntu";
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Josefin Sans", sans-serif;
+    background: linear-gradient(to right, #000000 10%, #ffffff 50%, rgba(252, 163, 17, 1) 60%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 1.5s linear infinite;
+    display: inline-block;
 }
 
-#main-404 {
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  text-align: center;
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
 }
 
-.text-404 {
-  opacity: 0.3;
-  color: whitesmoke;
-  font-size: 12rem;
-  font-weight: 900;
-  display: inline-block;
-  padding-right: 12px;
-  animation: type 0.6s alternate infinite;
-  max-height: 350px;
+.bg-form {
+    border: 3px solid rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 1);
 }
 
-.text-description-404 {
-  color: whitesmoke;
-  font-size: 48px;
-  font-weight: 700;
+/* ============================= */
+/* device md-medio */
+/* ============================= */
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+    .tituloLogin {
+        text-align: center;
+
+        color: #fff;
+        font-size: 70px;
+        font-family: "ubuntu";
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: "Josefin Sans", sans-serif;
+        background: linear-gradient(to right, #000000 10%, #ffffff 50%, rgba(252, 163, 17, 1) 60%);
+        background-size: auto auto;
+        background-clip: border-box;
+        background-size: 200% auto;
+        color: #fff;
+        background-clip: text;
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 1.5s linear infinite;
+        display: inline-block;
+    }
 }
 
-@keyframes type {
-  from {
-    box-shadow: inset -10px 0px 0px whitesmoke;
-  }
-  to {
-    box-shadow: inset -10px 0px 0px transparent;
-  }
+/* ================================================ */
+/* Media pequeno */
+/* ================================================ */
+@media all and (min-width: 322px) and (max-width: 767px) {
+    .tituloLogin {
+        text-align: center;
+
+        color: #fff;
+        font-size: 50px;
+        font-family: "ubuntu";
+        text-transform: uppercase;
+        font-weight: 700;
+        font-family: "Josefin Sans", sans-serif;
+        background: linear-gradient(to right, #000000 10%, #ffffff 50%, rgba(252, 163, 17, 1) 60%);
+        background-size: auto auto;
+        background-clip: border-box;
+        background-size: 200% auto;
+        color: #fff;
+        background-clip: text;
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 1.5s linear infinite;
+        display: inline-block;
+    }
 }
-/* Fin estilos Error 404 */
