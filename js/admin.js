@@ -30,18 +30,21 @@ if (user.id === 9999) {
             let tr = document.createElement("tr");
             if (user.usuario === "admin") {
                 contenido = `
-        <th scope="row" class="text-center">${user.usuario}</th>
-            <td class="text-center">${user.nombre}</td>
-            <td class="text-center">${user.email}</td>
-            <td class="text-center">${user.activo}</td>     
+                <th scope="row" class="text-center">${user.usuario}
+                <td class="text-center">${user.nombre}</td>
+                <td class="text-center">${user.email}</td>
+                <td class="text-center">${user.activo}</td>     
+                </th>
         `;
             } else {
                 contenido = `
-        <th scope="row" class="text-center">${user.usuario}</th>
-            <td class="text-center">${user.nombre}</td>
-            <td class="text-center">${user.email}</td>
-            <td class="text-center">${user.activo}</td>
-            <td class="text-center"><a href="#" class="boton-${user.activo}" onclick="activarUser(${user.id})"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a></td>`;
+                <th scope="row" class="text-center">${user.usuario}
+                <td class="text-center">${user.nombre}</td>
+                <td class="text-center">${user.email}</td>
+                <td class="text-center">${user.activo}</td>
+                <td class="text-center"><a href="#" class="boton-${user.activo}" onclick="activarUser(${user.id})"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></a></td>
+                </th>
+            `;
             }
             tr.innerHTML = contenido;
             tableUser.appendChild(tr);
@@ -181,6 +184,7 @@ if (user.id === 9999) {
                 return prod.codigo === producto.codigo;
             });
             productos[index].nombre = nombre;
+            productos[index].categoria = categoria;
             productos[index].imagen = imagen;
             productos[index].precio = precio;
             productos[index].stock = stock;
