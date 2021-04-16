@@ -46,11 +46,181 @@
     </header>
 
     <main>
-        ...
+        <div id="sm-bg" class="container-fluid">
+            <!-- Seccion con carousel -->
+            <section id="carousel" class="mb-3">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <div id="Slider" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel2" data-slide-to="1"></li>
+                                <li data-target="#carousel3" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="../img/img-carousel/img1.jpg" class="d-block w-100 img-carousel"
+                                        alt="Image of the gym">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3><a href="turnos.html" class="btn btn-lg btn-warning turnos-bnt"><i
+                                                    class="fa fa-calendar" aria-hidden="true"></i> Turnos</a></h3>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../img/img-carousel/img2.jpg" class="d-block w-100 img-carousel"
+                                        alt="Image of the gym">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3><a href="turnos.html" class="btn btn-lg btn-warning turnos-bnt shadow"><i
+                                                    class="fa fa-calendar" aria-hidden="true"></i> Turnos</a></h3>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="../img/img-carousel/img3.jpg" class="d-block w-100 img-carousel"
+                                        alt="Image of the gym">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h3><a href="turnos.html" class="btn btn-lg btn-warning turnos-bnt"><i
+                                                    class="fa fa-calendar" aria-hidden="true"></i> Turnos</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="container-fluid">
+                <div class="row justify-content-center">
+                    <div class="col text-center">
+                        <h1><a href="turnos.html" id="button-turnos"
+                                class="btn btn-lg btn-warning turnos-bnt mt-2 mb-4"><i class="fa fa-calendar mt-4"
+                                    aria-hidden="true"></i> Turnos</a></h1>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin seccion con el carousel -->
+            <!-- Seccion con productos -->
+            <section id="productos-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h1><button type="button" class="btn btn-warning text-white btn-lg btn-block mb-5">Productos
+                                    mas vendidos</button>
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-deck">
+                    <div class="card prod-popular mb-2">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_928636-MLA41941082863_052020-O.webp"
+                            class="img-fluid card-img-top p-3 mb-5" alt="mancuerna">
+                        <div class="card-body">
+                            <h5 class="card-title mb-5">Combo Barra + 2 Mancuernas + 30kg</h5>
+                            <p class="card-text">1 BARRA DE 1,50 MTS + 2 MANCUERNAS + 4 DISCOS 5KG + 4 DISCOS 2,5KG
+                                -DIRECTO DE FABRICA
+                                -EXCELENTE CALIDAD</p>
+                            <a href="productos.html" class="btn btn-success">ver mas</a>
+                        </div>
+                    </div>
+                    <div class="card prod-popular mb-2">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_931756-MLA42884873762_072020-O.webp"
+                            class="img-fluid card-img-top p-3 mb-5" alt="botella metalica">
+                        <div class="card-body">
+                            <h5 class="card-title mb-5">Botella Deportiva Waterdog</h5>
+                            <p class="card-text">
+                                BOTELLA DE ALUMINIO ULTRALIVIANA;
+                                recubrimiento POWDER COATED (GM).
+                                Fácil de llenar.
+                                Ideal para agua fría y bebidas deportivas.
+                            </p>
+                            <p>Capacidad: 750 ml</p>
+                            <p>Medida: 27 x 6,5 cm</p>
+                            <p>Peso: 135 g</p>
+                            <a href="productos.html" class="btn btn-success">ver mas</a>
+                        </div>
+                    </div>
+                    <div class="card prod-popular mb-2">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_731972-MLA43954973750_102020-O.webp"
+                            class="img-fluid card-img-top p-3 mb-5 " alt="shorts deportivos">
+                        <div class="card-body">
+                            <h5 class="card-title mb-5">Shorts De Hombre Deportivos</h5>
+                            <p class="card-text">Confeccionadas con algodón de primera calidad, 24-1 peinado.
+                                Ideales para uso diario y para realizar cualquier tipo de actividad deportiva
+                                Excelentes terminaciones.
+                                Ideales para media estación.
+                                Viene con bolsillos laterales (no tiene bolsillo atras)
+                                Cordon ajustable para adaptarlo como mas te guste.</p>
+                            <a href="productos.html" class="btn btn-success">ver mas</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Fin seccion productos -->
+        </div>
     </main>
-
-    <footer>
-        ...
+    <!-- Fin de Main -->
+    <!-- Inicio de Footer -->
+    <footer id="footer-main" class="page-footer pt-4 mt-3">
+        <div class="container-fluid mt-5"></div>
+        <div class="row">
+            <div class="col-lg-4 text-center pr-0">
+                <h4 class="titulo-footer mb-5">Quick Links</h4>
+                <ul id="list-qk" class="nav flex-column mt-4">
+                    <li class="mb-2"><a href="main.html">Home</a></li>
+                    <li class="mb-2"><a href="turnos.html">Turnos</a></li>
+                    <li class="mb-2"><a href="productos.html">Productos</a></li>
+                    <li class="mb-5"><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4 text-center border-div mb-5 pr-0">
+                <h4 class="titulo-footer">Contactanos</h4>
+                <div class="row justify-content-center">
+                    <iframe id="map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.102220299916!2d-65.2093904851186!3d-26.836700883160397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1sen!2sar!4v1617991467794!5m2!1sen!2sar"
+                        width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                        class="map"></iframe>
+                </div>
+                <div class="row justify-content-center mt-4">
+                    <div class="col">
+                        <i class="fa fa-phone-square fa-2x mr-4" aria-hidden="true"></i>+543816987541
+                    </div>
+                </div>
+                <div class="row justify-content-center pt-2">
+                    <div class="col">
+                        <i class="fa fa-envelope fa-2x mr-4" aria-hidden="true"></i>ritmolatinogim@gmail.com
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center mb-4 pr-0">
+                <h4 class="mb-5 titulo-footer">Siguenos en nuestras redes sociales</h4>
+                <i class="fa fa-facebook-square fa-3x mr-4" aria-hidden="true"></i>
+                <i class="fa fa-twitter-square fa-3x mr-4" aria-hidden="true"></i>
+                <i class="fa fa-instagram fa-3x mr-4" aria-hidden="true"></i>
+                <h4 class="mt-5 titulo-footer">Nuestros metodos de pagos</h4>
+                <div class="col m-sm-0 pr-0">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"
+                        alt="Visa" class="my-4 m-lg-1 m-sm-0 img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"
+                        alt="Matercard" class="my-4 m-lg-1 m-sm-0  img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"
+                        alt="American Express" class="my-4 m-lg-1 m-sm-0  img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"
+                        alt="Mercado Pago" class="my-4 m-lg-1 m-sm-0  img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png"
+                        alt="Pago Facil" class="my-4 m-lg-1 m-sm-0  img-pago">
+                    <img src="https://d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"
+                        alt="Rapipago" class="my-4 img-pago">
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <footer id="footer-copyright">
+        <div class="container">
+            <div class="d-flex justify-content-around">
+                <p>
+                    ©Copyright 2021 Todos los derechos reservados
+                </p>
+            </div>
+        </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
