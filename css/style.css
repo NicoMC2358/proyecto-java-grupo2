@@ -3,8 +3,8 @@
 } */
 
 .gimnasioLogo {
-    width: 45px;
-    height: 35px;
+  width: 45px;
+  height: 35px;
 }
 
 /* Estilos Seccion Productos */
@@ -13,6 +13,11 @@
     height: 150px;
     object-fit: cover;
 }
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
 
 .card-img-top-miguel {
     width: 100%;

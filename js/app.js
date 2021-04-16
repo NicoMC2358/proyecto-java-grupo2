@@ -18,7 +18,6 @@ function validarMail(input) {
   if (input.value != "" && expresion.test(input.value)) {
 
     input.className = "form-control is-valid";
-
     return true;
   } else {
     input.className = "form-control is-invalid";
